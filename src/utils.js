@@ -12,14 +12,29 @@ const retrieveLinks = (absolutePath) => {
   return arrayOfLinks;
 };
 
-const verifyFileAsMarkdown = (absolutePath) => {
-  // should contemplate recursive case here
-  const statsFile = fs.statSync(absolutePath);
-  if (statsFile.isFile() && path.extname(absolutePath) === '.md') {
-    retrieveLinks(absolutePath);
-  } else {
-    throw new Error('Debes ingresar una ruta hacia un archivo markdown');
+/* const verifyFileAsMarkdown = (absolutePath) => {
+  if (path.extname(absolutePath) === '.md') {
+    return retrieveLinks(absolutePath);
   }
+};
+
+const verifyIsFileOrFolder = (absolutePath) => {
+  const statsFile = fs.statSync(absolutePath);
+  if (statsFile.isDirectory() {
+    fs.readdirSync(absolutePath);
+  }
+};
+*/
+
+const resolvePath = (pathEnteredByUser) => {
+  // ojo con el escape slash
+  let absolutePath = '';
+  if (path.isAbsolute(pathEnteredByUser)) {
+    absolutePath = pathEnteredByUser;
+  } else {
+    absolutePath = path.resolve(pathEnteredByUser);
+  }
+  return absolutePath;
 };
 
 const validatePath = (absolutePath) => {
@@ -44,6 +59,9 @@ const formatLinks = (pathEnteredByUser, arrayOfLinks) => {
   return formattedLinks;
 };
 
-exports.validatePath = validatePath;
-exports.retrieveLinks = retrieveLinks;
-exports.formatLinks = formatLinks;
+module.exports = {
+  resolvePath,
+  validatePath,
+  retrieveLinks,
+  formatLinks,
+};
