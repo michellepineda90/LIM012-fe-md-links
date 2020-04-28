@@ -1,10 +1,11 @@
 const utilityFunctions = require('./utils');
 
 const mdLinks = (pathEnteredByUser, options) => new Promise((resolve, reject) => {
-  // if (options) || if (options.validate === false) comprobar si estos evalúan a lo mismo
-  // resolve();
+  if (!options || options.validate === false) {
+    resolve('no hay opción');
+  }
   if (options.validate === true) {
-  resolve();
+    resolve('sí hay opción');
   }
 });
 

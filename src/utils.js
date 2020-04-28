@@ -39,7 +39,7 @@ const resolvePath = (pathEnteredByUser) => {
 
 const validatePath = (absolutePath) => {
   if (fs.existsSync(absolutePath)) {
-    verifyFileAsMarkdown(absolutePath);
+    retrieveLinks(absolutePath);
   } else {
     throw new Error('La ruta ingresada no es válida o no existe, por favor intenta de nuevo');
   }
