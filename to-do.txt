@@ -1,0 +1,31 @@
+API:
+
+mdLinks(path, options* default undefined/false) //  [{ href, text, file }] 
+mdLinks("./some/example.md", { validate: true }) // [{ href, text, file, status, ok }]
+
+href = http://algo.com/2/3/    
+text = Algo Website            
+file = path del file o directory
+status = http response
+
+const pathEnteredByUser = './md-files/valid.md'
+
+Caso base: El file es el último .md file que existe en la carpeta.
+Caso recursivo: El root directory puede tener otro directory que dentro tenga otros directories o files.
+1 file (caso base)
+directory = directory con directories o files dentro (para caso mi primer archivo sea un directory) (caso recursivo)
+
+----------------
+
+CLI:
+md-links <path-to-file> [options]       // ./path/doc.md link
+$ md-links ./some/example.md            //  ./some/example.md http://algo.com/2/3/
+$ md-13d99df067c1 --validate            //  ./some/example.md http://algo.com/2/3/ ok 200 
+$ md-links ./some/example.md --stats    // Total: 3 Unique: 3
+$ md-links ./some/example.md --stats --validate // Total: 3 Unique: 3 Broken: 1
+
+
+-----------------
+pending:
+const validateOption = options.validate || false; //  should use lodash get
+lookup timeout (en node-fetch)
