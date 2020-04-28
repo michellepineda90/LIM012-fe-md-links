@@ -1,10 +1,11 @@
-const path = require('path');
 const utilityFunctions = require('./utils');
 
-const pathEnteredByUser = './md-files/valid.md';
-
-const mdLinks = (pathEnteredByUser, options = { validate: false }) => new Promise((resolve, reject) => {
-  const absolutePath = path.normalize(path.resolve(pathEnteredByUser));
+const mdLinks = (pathEnteredByUser, options) => new Promise((resolve, reject) => {
+  // if (options) || if (options.validate === false) comprobar si estos evalúan a lo mismo
+  // resolve();
+  if (options.validate === true) {
+  resolve();
+  }
 });
 
 module.exports = mdLinks;

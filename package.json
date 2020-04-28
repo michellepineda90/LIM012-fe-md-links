@@ -6,8 +6,7 @@
   "scripts": {
     "eslint": "eslint --ext .js src/ tests/",
     "pretest": "npm run eslint",
-    "test": "jest --verbose --coverage",
-    "start": ""
+    "test": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",

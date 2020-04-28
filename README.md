@@ -12,6 +12,7 @@ El objetivo práctico de este proyecto es que crear mi propia _library_ en JavaS
 
 ### Arquitectura del proyecto 
 
+```
 .
 ├── README.md
 ├── package.json
@@ -20,6 +21,7 @@ El objetivo práctico de este proyecto es que crear mi propia _library_ en JavaS
   └── mdLinks.js
 └── tests
   └── mdLinks.spec.js
+```
 
 ### Planificación del proyecto
 
@@ -40,24 +42,24 @@ Kanban board en GitHub:
 ### Javascript
 - [ ] Uso de callbacks
 - [ ] Consumo de Promesas
-- [ ] Creacion de Promesas
-- [x] Modulos de JS
+- [ ] Creación de Promesas
+- [x] Módulos de JS
 - [ ] Recursión
 
 ### Node
 - [ ] Sistema de archivos
 - [x] package.json
-- [ ] crear modules
+- [ ] Crear modules
 - [x] Instalar y usar modules
 - [x] npm scripts
-- [ ] CLI (Command Line Interface - Interfaz de Línea de Comando)
+- [ ] CLI
 
 ### Testing
-- [ ] Testeo de tus funciones
+- [ ] Testeo de funciones
 - [ ] Testeo asíncrono
-- [ ] Uso de librerias de Mock
+- [ ] Uso de librerías de Mock
 - [ ] Mocks manuales
-- [ ] Testeo para multiples Sistemas Operativos
+- [ ] Testeo para múltiples OS
 
 ### Git y Github
 - [x] Organización en Github
