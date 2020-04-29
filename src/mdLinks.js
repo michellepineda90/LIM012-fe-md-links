@@ -1,14 +1,18 @@
 const utilityFunctions = require('./utils');
 
 const mdLinks = (pathEnteredByUser, options) => new Promise((resolve, reject) => {
-  if (!options || options.validate === false) {
-    utilityFunctions.resolvePath(pathEnteredByUser);
-    resolve(utilityFunctions.validatePath(pathEnteredByUser));
+  const absolutePath = utilityFunctions.resolvePath(pathEnteredByUser);
+  if (utilityFunctions.validatePath(absolutePath)) {
+    const links = utilityFunctions.retrieveLinks(absolutePath);
+    const formattedLinks = utilityFunctions.formatLinks(pathEnteredByUser, links);
+    if (!options || options.validate === false) {
+      resolve(formattedLinks);
+    }
+    if (options.validate === true) {
+      resolve('aquí irían links CON validación');
+    }
   }
-  if (options.validate === true) {
-    resolve('sí hay opción');
-  }
-  reject(error);
+  reject(err);
 });
 
 module.exports = mdLinks;

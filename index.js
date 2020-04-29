@@ -9,5 +9,5 @@ const userPath3 = './tests/equis.md';
 // test options { validate: false } { validate: true }
 
 mdLinks(userPath3)
-  .then((validatePath) => console.log(validatePath))
-  .catch((err) => console.log(err));
+  .then((arr) => console.log(arr))
+  .catch((err) => console.error(err));

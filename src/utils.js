@@ -12,7 +12,9 @@ const retrieveLinks = (absolutePath) => {
   return arrayOfLinks;
 };
 
-/* const verifyFileAsMarkdown = (absolutePath) => {
+/*
+for recursive feature
+const verifyFileAsMarkdown = (absolutePath) => {
   if (path.extname(absolutePath) === '.md') {
     return retrieveLinks(absolutePath);
   }
@@ -38,11 +40,11 @@ const resolvePath = (pathEnteredByUser) => {
 };
 
 const validatePath = (absolutePath) => {
-  if (fs.existsSync(absolutePath)) {
-    retrieveLinks(absolutePath);
-  } else {
+  const pathIsValid = fs.existsSync(absolutePath);
+  if (!pathIsValid) {
     throw new Error('La ruta ingresada no es válida o no existe, por favor intenta de nuevo');
   }
+  return pathIsValid;
 };
 
 const formatLinks = (pathEnteredByUser, arrayOfLinks) => {
