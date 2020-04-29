@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const slash = require('slash');
 
 const linkRegEx = /\[((.+?))\]\((http|https|ftp|ftps).+?\)/g;
 const hrefRegEx = /\((http|https|ftp|ftps).+?\)/g;
@@ -34,7 +35,7 @@ const resolvePath = (pathEnteredByUser) => {
   if (path.isAbsolute(pathEnteredByUser)) {
     absolutePath = pathEnteredByUser;
   } else {
-    absolutePath = path.resolve(pathEnteredByUser);
+    absolutePath = slash(path.resolve(pathEnteredByUser));
   }
   return absolutePath;
 };

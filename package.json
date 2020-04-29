@@ -28,6 +28,7 @@
     "semver": "^7.3.2"
   },
   "dependencies": {
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.0",
+    "slash": "^3.0.0"
   }
 }
