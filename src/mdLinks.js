@@ -12,7 +12,7 @@ const mdLinks = (pathEnteredByUser, options) => new Promise((resolve, reject) =>
       resolve('aquí irían links CON validación');
     }
   }
-  reject(err);
+  reject(new Error('Oops, algo salió mal'));
 });
 
 module.exports = mdLinks;

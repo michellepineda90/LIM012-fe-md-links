@@ -1,6 +1,5 @@
 // CLI
 const path = require('path');
-const slash = require('slash');
 const mdLinks = require('./src/mdLinks');
 
 
@@ -10,6 +9,6 @@ const userPath2 = '/md-files/valid.md';
 const userPath3 = '/tests/equis.md';
 // test options { validate: false } { validate: true }
 
-mdLinks(userPath2)
+mdLinks(userPath1)
   .then((arr) => console.log(arr))
   .catch((err) => console.error(err));

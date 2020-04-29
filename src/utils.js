@@ -30,11 +30,8 @@ const verifyIsFileOrFolder = (absolutePath) => {
 */
 
 const resolvePath = (pathEnteredByUser) => {
-  // ojo con el escape slash
-  let absolutePath = '';
-  if (path.isAbsolute(pathEnteredByUser)) {
-    absolutePath = pathEnteredByUser;
-  } else {
+  let absolutePath = pathEnteredByUser;
+  if (!path.isAbsolute(pathEnteredByUser)) {
     absolutePath = slash(path.resolve(pathEnteredByUser));
   }
   return absolutePath;
