@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const fetch = require('node-fetch');
 const slash = require('slash');
 
 const linkRegEx = /\[((.+?))\]\((http|https|ftp|ftps).+?\)/g;
@@ -59,9 +60,24 @@ const formatLinks = (pathEnteredByUser, arrayOfLinks) => {
   return formattedLinks;
 };
 
+const validateLinks = (formattedLinks) => new Promise((resolve, reject) => {
+  const linksToValidate = formattedLinks.slice();
+  const extractedUrls = linksToValidate.map((link) => (link.href));
+  const httpResponses = extractedUrls.map((url) => fetch(url));
+  return Promise.all(httpResponses)
+    .then((responses) => {
+      responses.forEach((response, index) => {
+        linksToValidate[index].status = response.status;
+        linksToValidate[index].statusText = response.statusText;
+      });
+      resolve(linksToValidate);
+    });
+});
+
 module.exports = {
   resolvePath,
   validatePath,
   retrieveLinks,
   formatLinks,
+  validateLinks,
 };

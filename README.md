@@ -35,6 +35,8 @@ Kanban board en GitHub:
 
 ### Documentación técnica
 
+Actualmente, el programa no contempla los siguientes _edge cases_: recursión (directory con otros directories);timeout errors; una cantidad de links que pueda provocar error en el fetch.
+
 ### Guía de usuario para instalación y uso
 
 ## Objetivos de aprendizaje

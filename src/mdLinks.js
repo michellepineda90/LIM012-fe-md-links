@@ -9,7 +9,8 @@ const mdLinks = (pathEnteredByUser, options) => new Promise((resolve, reject) =>
       resolve(formattedLinks);
     }
     if (options.validate === true) {
-      resolve('aquí irían links CON validación');
+      const validatedLinks = utilityFunctions.validateLinks(formattedLinks);
+      resolve(validatedLinks);
     }
   }
   reject(new Error('Oops, algo salió mal'));
