@@ -71,7 +71,8 @@ const validateLinks = (formattedLinks) => new Promise((resolve, reject) => {
         linksToValidate[index].statusText = response.statusText;
       });
       resolve(linksToValidate);
-    });
+    })
+    .catch((err) => console.log(err));
 });
 
 module.exports = {

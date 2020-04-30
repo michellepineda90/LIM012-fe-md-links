@@ -49,9 +49,9 @@ Actualmente, el programa no contempla los siguientes _edge cases_: recursión (d
 - [ ] Recursión
 
 ### Node
-- [ ] Sistema de archivos
+- [x] Sistema de archivos
 - [x] package.json
-- [ ] Crear modules
+- [x] Crear modules
 - [x] Instalar y usar modules
 - [x] npm scripts
 - [ ] CLI
@@ -67,6 +67,6 @@ Actualmente, el programa no contempla los siguientes _edge cases_: recursión (d
 - [x] Organización en Github
 
 ### Buenas prácticas de desarrollo
-- [ ] Modularización
-- [ ] Nomenclatura / Semántica
+- [x] Modularización
+- [x] Nomenclatura / Semántica
 - [x] Linting
