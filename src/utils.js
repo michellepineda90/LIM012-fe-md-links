@@ -7,13 +7,6 @@ const linkRegEx = /\[((.+?))\]\((http|https|ftp|ftps).+?\)/g;
 const hrefRegEx = /\((http|https|ftp|ftps).+?\)/g;
 const textRegEx = /\[.+?\]/g;
 
-const retrieveLinks = (absolutePath) => {
-  let arrayOfLinks = [];
-  const mdContentToString = fs.readFileSync(absolutePath).toString();
-  arrayOfLinks = mdContentToString.match(linkRegEx);
-  return arrayOfLinks;
-};
-
 /*
 for recursive feature
 const verifyFileAsMarkdown = (absolutePath) => {
@@ -44,6 +37,13 @@ const validatePath = (absolutePath) => {
     throw new Error('La ruta ingresada no es válida o no existe, por favor intenta de nuevo');
   }
   return pathIsValid;
+};
+
+const retrieveLinks = (absolutePath) => {
+  let arrayOfLinks = [];
+  const mdContentToString = fs.readFileSync(absolutePath).toString();
+  arrayOfLinks = mdContentToString.match(linkRegEx);
+  return arrayOfLinks;
 };
 
 const formatLinks = (pathEnteredByUser, arrayOfLinks) => {
