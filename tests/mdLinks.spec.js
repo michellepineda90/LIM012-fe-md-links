@@ -1,6 +1,14 @@
 const mdLinks = require('../src/mdLinks');
 
-describe('set of tests for mdLinks API', () => {
+// mock será para lo fetch()
+
+describe('synchronous utility functions', () => {
+  test('Resolve a path', () => {
+    expect().toBe(); // check the to method
+  });
+});
+
+describe('asynchronous utility functions', () => {
   test('Promise - Promise(resolve, reject)', (done) => {
     const url = 'http://localhost:3000/posts';
     fetch(url).then((datos) => {

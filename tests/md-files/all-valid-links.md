@@ -10,13 +10,19 @@ Tópicos: [Node.js](https://nodejs.org/en/),
 parsing,
 [markdown](https://daringfireball.net/projects/markdown/syntax), CLI,
 [npm-scripts](https://docs.npmjs.com/misc/scripts),
-[semver](https://semver.org/), ...
+[semver](https://semver.org/a), ...
 
 ## También tenenemos...
 
 Una imagen:
 
-Y una lista: 
+![product-backlog-board](product-backlog.jpg)
+
+Un bloque de código
+
+```
+texto no enriquecido
+```
 
 ### Cositas por aquí 
 

@@ -64,7 +64,7 @@ const validateLinks = (formattedLinks) => new Promise((resolve, reject) => {
   const linksToValidate = formattedLinks.slice();
   const extractedUrls = linksToValidate.map((link) => (link.href));
   const httpResponses = extractedUrls.map((url) => fetch(url));
-  return Promise.all(httpResponses)
+  Promise.all(httpResponses)
     .then((responses) => {
       responses.forEach((response, index) => {
         linksToValidate[index].status = response.status;
@@ -72,7 +72,7 @@ const validateLinks = (formattedLinks) => new Promise((resolve, reject) => {
       });
       resolve(linksToValidate);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => reject(err));
 });
 
 module.exports = {
