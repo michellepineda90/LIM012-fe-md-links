@@ -1,11 +1,11 @@
-const validAbsolutePath = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/valid.md';
+const valAbsPath = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md';
 
-const validRelativePath = './tests/md-files/all-valid-links.md';
+const valRelPath = './tests/md-files/all-valid-links.md';
 
-const nonExistingRelativePath = './tests/equis.md';
+const invRelPath = './tests/equis.md';
 
 module.exports = {
-  validAbsolutePath,
-  validRelativePath,
-  nonExistingRelativePath,
+  valAbsPath,
+  valRelPath,
+  invRelPath,
 };

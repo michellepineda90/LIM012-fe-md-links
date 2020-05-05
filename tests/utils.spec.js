@@ -2,20 +2,25 @@ const utilityFunctions = require('../src/utils');
 const mockData = require('./mock-data');
 
 describe('Resolves a path', () => {
-  it('Resolves a relative path into an absolute path', () => {
-    expect(utilityFunctions.resolvePath('.')).toEqual(process.cwd());
+  test('Resolves a relative path into an absolute path', () => {
+    expect(utilityFunctions.resolvePath(mockData.valRelPath)).toEqual(mockData.valAbsPath);
   });
-  it('Returns an unmodified absolute path', () => {
-    expect(utilityFunctions.resolvePath('/hello/md-file.md')).toEqual('/hello/md-file.md');
+  test('Returns an unmodified absolute path', () => {
+    expect(utilityFunctions.resolvePath(mockData.valAbsPath)).toEqual(mockData.valAbsPath);
   });
 });
 
 describe('Validates a path', () => {
   test('Returns true when path is valid and/or exists', () => {
-    expect(utilityFunctions.validatePath()).toEqual();
+    expect(utilityFunctions.validatePath(mockData.valAbsPath)).toEqual(true);
   });
-  test('Returns false when path is invalid and/or does not exist', () => {
-    expect(utilityFunctions.validatePath()).toEqual();
+  test('should throw Error message when path is invalid or does not exist', () => {
+    expect.assertions(1);
+    try {
+      utilityFunctions.validatePath(mockData.invRelPath);
+    } catch (e) {
+      expect(e.message).toBe('La ruta ingresada no es válida o no existe, revísala e intenta de nuevo');
+    }
   });
 });
 

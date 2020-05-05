@@ -1,6 +1,6 @@
 const utilityFunctions = require('./utils');
 
-const mdLinks = (pathEnteredByUser, options) => new Promise((resolve, reject) => {
+const mdLinks = (pathEnteredByUser, options) => new Promise((resolve) => {
   const absolutePath = utilityFunctions.resolvePath(pathEnteredByUser);
   if (utilityFunctions.validatePath(absolutePath)) {
     const links = utilityFunctions.retrieveLinks(absolutePath);
@@ -13,7 +13,6 @@ const mdLinks = (pathEnteredByUser, options) => new Promise((resolve, reject) =>
       resolve(validatedLinks);
     }
   }
-  reject(new Error('Oops, algo salió mal'));
 });
 
 module.exports = mdLinks;

@@ -26,21 +26,27 @@ const validatePath = (absolutePath) => {
 const retrieveLinks = (absolutePath) => {
   let arrayOfLinks = [];
   const mdContentToString = fs.readFileSync(absolutePath).toString();
-  arrayOfLinks = mdContentToString.match(linkRegEx);
+  if (mdContentToString.length) {
+    arrayOfLinks = mdContentToString.match(linkRegEx);
+    return arrayOfLinks;
+  }
   return arrayOfLinks;
 };
 
 const formatLinks = (pathEnteredByUser, arrayOfLinks) => {
   const formattedLinks = [];
-  arrayOfLinks.forEach((link) => {
-    const text = link.match(textRegEx)[0];
-    const url = link.match(hrefRegEx)[0];
-    formattedLinks.push({
-      href: url.substring(1, url.length - 1),
-      text: text.substring(1, text.length - 1).slice(0, 49),
-      file: pathEnteredByUser,
+  if (arrayOfLinks.length) {
+    arrayOfLinks.forEach((link) => {
+      const text = link.match(textRegEx)[0];
+      const url = link.match(hrefRegEx)[0];
+      formattedLinks.push({
+        href: url.substring(1, url.length - 1),
+        text: text.substring(1, text.length - 1).slice(0, 49),
+        file: pathEnteredByUser,
+      });
     });
-  });
+    return formattedLinks;
+  }
   return formattedLinks;
 };
 
