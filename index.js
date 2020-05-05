@@ -9,6 +9,6 @@ const userPath2 = './tests/md-files/all-valid-links.md';
 const userPath3 = './tests/equis.md';
 // test options { validate: false } { validate: true }
 
-mdLinks(userPath2, { validate: true })
+mdLinks(userPath3)
   .then((arr) => console.log(arr))
   .catch((err) => console.error(err));

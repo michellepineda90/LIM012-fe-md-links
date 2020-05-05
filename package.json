@@ -28,6 +28,7 @@
     "semver": "^7.3.2"
   },
   "dependencies": {
+    "gitmoji-cli": "^3.2.4",
     "node-fetch": "^2.6.0",
     "slash": "^3.0.0"
   }

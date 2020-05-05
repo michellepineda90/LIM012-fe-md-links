@@ -7,22 +7,6 @@ const linkRegEx = /\[((.+?))\]\((http|https|ftp|ftps).+?\)/g;
 const hrefRegEx = /\((http|https|ftp|ftps).+?\)/g;
 const textRegEx = /\[.+?\]/g;
 
-/*
-for recursive feature
-const verifyFileAsMarkdown = (absolutePath) => {
-  if (path.extname(absolutePath) === '.md') {
-    return retrieveLinks(absolutePath);
-  }
-};
-
-const verifyIsFileOrFolder = (absolutePath) => {
-  const statsFile = fs.statSync(absolutePath);
-  if (statsFile.isDirectory() {
-    fs.readdirSync(absolutePath);
-  }
-};
-*/
-
 const resolvePath = (pathEnteredByUser) => {
   let absolutePath = pathEnteredByUser;
   if (!path.isAbsolute(pathEnteredByUser)) {
@@ -34,7 +18,7 @@ const resolvePath = (pathEnteredByUser) => {
 const validatePath = (absolutePath) => {
   const pathIsValid = fs.existsSync(absolutePath);
   if (!pathIsValid) {
-    throw new Error('La ruta ingresada no es válida o no existe, por favor intenta de nuevo');
+    throw new Error('La ruta ingresada no es válida o no existe, revísala e intenta de nuevo');
   }
   return pathIsValid;
 };

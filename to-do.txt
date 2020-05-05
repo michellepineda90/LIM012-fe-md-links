@@ -1,9 +1,31 @@
 API:
 
-Caso base: El file es el último .md file que existe en la carpeta.
+Caso base: La ruta dirige a un .md file.
 Caso recursivo: El root directory puede tener otro directory que dentro tenga otros directories o files.
+
 1 file (caso base)
 directory = directory con directories o files dentro (para caso mi primer archivo sea un directory) (caso recursivo)
+
+recursión:
+estrategia 1: si la ruta es a un directory, leer los contenidos del directory. iterar sobre cada contenido y ver si alguno es directory. si sí, repetir; sino, filtrar por md y push a un array de md documents.
+estrategia 2: visitar cada archivo y extraer los links de cada uno.
+
+/*
+for recursive feature
+const verifyFileAsMarkdown = (absolutePath) => {
+  if (path.extname(absolutePath) === '.md') {
+    return retrieveLinks(absolutePath);
+  }
+};
+
+const verifyIsFileOrFolder = (absolutePath) => {
+  const statsFile = fs.statSync(absolutePath);
+  if (statsFile.isFile()) {
+    fs.readdirSync(absolutePath);
+  }
+};
+*/
+
 Cuando le tiro un error al usuario porque la ruta ingresada no es valida, debería sólo tirar ese mensaje de error
 o todo lo demás que también me tira?
 
