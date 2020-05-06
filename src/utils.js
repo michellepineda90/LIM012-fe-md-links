@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');
 const slash = require('slash');
+const fetch = require('node-fetch');
 
 const linkRegEx = /\[((.+?))\]\((http|https|ftp|ftps).+?\)/g;
 const hrefRegEx = /\((http|https|ftp|ftps).+?\)/g;

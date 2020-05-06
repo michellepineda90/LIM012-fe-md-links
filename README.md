@@ -30,11 +30,11 @@ El objetivo práctico de este proyecto es que crear mi propia _library_ en JavaS
 
 Kanban board en GitHub: 
 
-![product-backlog-board](product-backlog.jpg)
+![product-backlog-board](./readme-img/product-backlog.jpg)
 
 ### DFD de algoritmo
 
-![DFD-for-algorithm](md-links.jpg)
+![DFD-for-algorithm](./readme-img/md-links.jpg)
 
 ### Documentación técnica
 
@@ -50,7 +50,7 @@ Una gran cantidad de links que pudiera provocar error en el fetch.
 ### Javascript
 - [x] Uso de callbacks
 - [x] Consumo de Promesas
-- [ ] Creación de Promesas
+- [x] Creación de Promesas
 - [x] Módulos de JS
 - [ ] Recursión
 
@@ -64,7 +64,7 @@ Una gran cantidad de links que pudiera provocar error en el fetch.
 
 ### Testing
 - [x] Testeo de funciones
-- [ ] Testeo asíncrono
+- [x] Testeo asíncrono
 - [ ] Uso de librerías de Mock
 - [x] Mocks manuales
 - [ ] Testeo para múltiples OS

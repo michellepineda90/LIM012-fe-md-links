@@ -59,6 +59,65 @@ const formatdLinks = [
   },
 ];
 
+const validatdLinks = [
+  {
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    href: 'https://nodejs.org/en/',
+    status: 200,
+    statusText: 'OK',
+    text: 'Node.js',
+  },
+  {
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    href: 'https://nodejs.org/docs/latest-v0.10.x/api/modules.html',
+    status: 200,
+    statusText: 'OK',
+    text: 'módulos (CommonJS)',
+  },
+  {
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    href: 'https://nodejs.org/api/fs.html',
+    status: 200,
+    statusText: 'OK',
+    text: 'file system',
+  },
+  {
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    href: 'https://nodejs.org/api/path.html',
+    status: 200,
+    statusText: 'OK',
+    text: 'path',
+  },
+  {
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    href: 'https://nodejs.org/api/http.html#http_http_get_options_callback',
+    status: 200,
+    statusText: 'OK',
+    text: 'http.get',
+  },
+  {
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    href: 'https://daringfireball.net/projects/markdown/syntax',
+    status: 200,
+    statusText: 'OK',
+    text: 'markdown',
+  },
+  {
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    href: 'https://docs.npmjs.com/misc/scripts',
+    status: 200,
+    statusText: 'OK',
+    text: 'npm-scripts',
+  },
+  {
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    href: 'https://semver.org/a',
+    status: 404,
+    statusText: 'Not Found',
+    text: 'semver',
+  },
+];
+
 module.exports = {
   valAbsPath,
   valRelPath,
@@ -66,4 +125,5 @@ module.exports = {
   emptyFile,
   rawLinks,
   formatdLinks,
+  validatdLinks,
 };

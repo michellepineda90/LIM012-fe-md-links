@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">74.47% </span>
+                <span class="strong">97.87% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>35/47</span>
+                <span class='fraction'>46/47</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">41.67% </span>
+                <span class="strong">91.67% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/12</span>
+                <span class='fraction'>11/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">79.55% </span>
+                <span class="strong">97.73% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>35/44</span>
+                <span class='fraction'>43/44</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -184,16 +184,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -207,8 +207,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const fs = require('fs');
 const path = require('path');
-const fetch = require('node-fetch');
 const slash = require('slash');
+const fetch = require('node-fetch');
 &nbsp;
 const linkRegEx = /\[((.+?))\]\((http|https|ftp|ftps).+?\)/g;
 const hrefRegEx = /\((http|https|ftp|ftps).+?\)/g;
@@ -257,17 +257,17 @@ const formatLinks = (pathEnteredByUser, arrayOfLinks) =&gt; {
   return formattedLinks;
 };
 &nbsp;
-const validateLinks = <span class="fstat-no" title="function not covered" >(f</span>ormattedLinks) =&gt; <span class="cstat-no" title="statement not covered" >new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
-  const linksToValidate = <span class="cstat-no" title="statement not covered" >formattedLinks.slice();</span>
-  const extractedUrls = <span class="cstat-no" title="statement not covered" >linksToValidate.map(<span class="fstat-no" title="function not covered" >(l</span>ink) =&gt; (<span class="cstat-no" title="statement not covered" >link.href)</span>);</span>
-  const httpResponses = <span class="cstat-no" title="statement not covered" >extractedUrls.map(<span class="fstat-no" title="function not covered" >(u</span>rl) =&gt; <span class="cstat-no" title="statement not covered" >fetch(url))</span>;</span>
-<span class="cstat-no" title="statement not covered" >  Promise.all(httpResponses)</span>
-    .then(<span class="fstat-no" title="function not covered" >(r</span>esponses) =&gt; {
-<span class="cstat-no" title="statement not covered" >      responses.forEach(<span class="fstat-no" title="function not covered" >(r</span>esponse, index) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        linksToValidate[index].status = response.status;</span>
-<span class="cstat-no" title="statement not covered" >        linksToValidate[index].statusText = response.statusText;</span>
+const validateLinks = (formattedLinks) =&gt; new Promise((resolve, reject) =&gt; {
+  const linksToValidate = formattedLinks.slice();
+  const extractedUrls = linksToValidate.map((link) =&gt; (link.href));
+  const httpResponses = extractedUrls.map((url) =&gt; fetch(url));
+  Promise.all(httpResponses)
+    .then((responses) =&gt; {
+      responses.forEach((response, index) =&gt; {
+        linksToValidate[index].status = response.status;
+        linksToValidate[index].statusText = response.statusText;
       });
-<span class="cstat-no" title="statement not covered" >      resolve(linksToValidate);</span>
+      resolve(linksToValidate);
     })
     .catch(<span class="fstat-no" title="function not covered" >(e</span>rr) =&gt; <span class="cstat-no" title="statement not covered" >reject(err))</span>;
 });
@@ -286,7 +286,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue May 05 2020 19:06:09 GMT-0500 (Colombia Standard Time)
+                at Wed May 06 2020 11:26:33 GMT-0500 (Colombia Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
