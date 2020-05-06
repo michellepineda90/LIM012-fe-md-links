@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.84% </span>
+                <span class="strong">74.47% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/43</span>
+                <span class='fraction'>35/47</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.67% </span>
+                <span class="strong">41.67% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/12</span>
+                <span class='fraction'>5/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">52.5% </span>
+                <span class="strong">79.55% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/40</span>
+                <span class='fraction'>35/44</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -125,7 +125,13 @@
 <a name='L66'></a><a href='#L66'>66</a>
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -151,24 +157,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -218,25 +230,31 @@ const validatePath = (absolutePath) =&gt; {
   return pathIsValid;
 };
 &nbsp;
-const retrieveLinks = <span class="fstat-no" title="function not covered" >(a</span>bsolutePath) =&gt; {
-  let arrayOfLinks = <span class="cstat-no" title="statement not covered" >[];</span>
-  const mdContentToString = <span class="cstat-no" title="statement not covered" >fs.readFileSync(absolutePath).toString();</span>
-<span class="cstat-no" title="statement not covered" >  arrayOfLinks = mdContentToString.match(linkRegEx);</span>
-<span class="cstat-no" title="statement not covered" >  return arrayOfLinks;</span>
+const retrieveLinks = (absolutePath) =&gt; {
+  let arrayOfLinks = [];
+  const mdContentToString = fs.readFileSync(absolutePath).toString();
+  if (mdContentToString.length) {
+    arrayOfLinks = mdContentToString.match(linkRegEx);
+    return arrayOfLinks;
+  }
+  return arrayOfLinks;
 };
 &nbsp;
-const formatLinks = <span class="fstat-no" title="function not covered" >(p</span>athEnteredByUser, arrayOfLinks) =&gt; {
-  const formattedLinks = <span class="cstat-no" title="statement not covered" >[];</span>
-<span class="cstat-no" title="statement not covered" >  arrayOfLinks.forEach(<span class="fstat-no" title="function not covered" >(l</span>ink) =&gt; {</span>
-    const text = <span class="cstat-no" title="statement not covered" >link.match(textRegEx)[0];</span>
-    const url = <span class="cstat-no" title="statement not covered" >link.match(hrefRegEx)[0];</span>
-<span class="cstat-no" title="statement not covered" >    formattedLinks.push({</span>
-      href: url.substring(1, url.length - 1),
-      text: text.substring(1, text.length - 1).slice(0, 49),
-      file: pathEnteredByUser,
+const formatLinks = (pathEnteredByUser, arrayOfLinks) =&gt; {
+  const formattedLinks = [];
+  if (arrayOfLinks.length) {
+    arrayOfLinks.forEach((link) =&gt; {
+      const text = link.match(textRegEx)[0];
+      const url = link.match(hrefRegEx)[0];
+      formattedLinks.push({
+        href: url.substring(1, url.length - 1),
+        text: text.substring(1, text.length - 1).slice(0, 49),
+        file: pathEnteredByUser,
+      });
     });
-  });
-<span class="cstat-no" title="statement not covered" >  return formattedLinks;</span>
+    return formattedLinks;
+  }
+  return formattedLinks;
 };
 &nbsp;
 const validateLinks = <span class="fstat-no" title="function not covered" >(f</span>ormattedLinks) =&gt; <span class="cstat-no" title="statement not covered" >new Promise(<span class="fstat-no" title="function not covered" >(r</span>esolve, reject) =&gt; {</span>
@@ -268,7 +286,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue May 05 2020 18:22:56 GMT-0500 (Colombia Standard Time)
+                at Tue May 05 2020 19:06:09 GMT-0500 (Colombia Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

@@ -1,44 +1,44 @@
 const utilityFunctions = require('../src/utils');
-const mockData = require('./mock-data');
+const mock = require('./mock-data');
 
 describe('Resolves a path', () => {
   test('Resolves a relative path into an absolute path', () => {
-    expect(utilityFunctions.resolvePath(mockData.valRelPath)).toEqual(mockData.valAbsPath);
+    expect(utilityFunctions.resolvePath(mock.valRelPath)).toEqual(mock.valAbsPath);
   });
   test('Returns an unmodified absolute path', () => {
-    expect(utilityFunctions.resolvePath(mockData.valAbsPath)).toEqual(mockData.valAbsPath);
+    expect(utilityFunctions.resolvePath(mock.valAbsPath)).toEqual(mock.valAbsPath);
   });
 });
 
 describe('Validates a path', () => {
   test('Returns true when path is valid and/or exists', () => {
-    expect(utilityFunctions.validatePath(mockData.valAbsPath)).toEqual(true);
+    expect(utilityFunctions.validatePath(mock.valAbsPath)).toEqual(true);
   });
   test('should throw Error message when path is invalid or does not exist', () => {
     expect.assertions(1);
     try {
-      utilityFunctions.validatePath(mockData.invRelPath);
+      utilityFunctions.validatePath(mock.invRelPath);
     } catch (e) {
       expect(e.message).toBe('La ruta ingresada no es válida o no existe, revísala e intenta de nuevo');
     }
   });
 });
 
-describe.skip('Retrieves all/any links from a .md file', () => {
+describe('Retrieves all/any links from a .md file', () => {
   test('Returns an empty array if there are no links', () => {
-    expect(utilityFunctions.retrieveLinks()).toEqual();
+    expect(utilityFunctions.retrieveLinks(mock.emptyFile)).toEqual([]);
   });
   test('Returns an array of links from .md file', () => {
-    expect(utilityFunctions.retrieveLinks()).toEqual();
+    expect(utilityFunctions.retrieveLinks(mock.valAbsPath)).toEqual(mock.rawLinks);
   });
 });
 
-describe.skip('Formats link into object with three properties', () => {
+describe('Formats link into object with three properties', () => {
   test('Returns an array with an empty object if empty object passed', () => {
-    expect(utilityFunctions.formatLinks()).toEqual();
+    expect(utilityFunctions.formatLinks(mock.emptyFile, [])).toEqual([]);
   });
   test('Returns an array of objects with href, text, and file properties', () => {
-    expect(utilityFunctions.formatLinks()).toEqual();
+    expect(utilityFunctions.formatLinks(mock.valAbsPath, mock.rawLinks)).toEqual(mock.formatdLinks);
   });
 });
 
