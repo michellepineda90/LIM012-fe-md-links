@@ -19,8 +19,11 @@ El objetivo práctico de este proyecto es que crear mi propia _library_ en JavaS
 ├── index.js
 └── src
   └── mdLinks.js
+  └── utils.js
 └── tests
-  └── mdLinks.spec.js
+  └── utils.spec.js
+  └── mock-data.js
+  └── md-files
 ```
 
 ### Planificación del proyecto
@@ -35,15 +38,18 @@ Kanban board en GitHub:
 
 ### Documentación técnica
 
-Actualmente, el programa no contempla los siguientes _edge cases_: recursión (directory con otros directories);timeout errors; una cantidad de links que pueda provocar error en el fetch.
+Actualmente, el programa no contempla los siguientes _edge cases_: 
+Recursión (directory con otros directories);
+Timeout errors; 
+Una gran cantidad de links que pudiera provocar error en el fetch.
 
 ### Guía de usuario para instalación y uso
 
 ## Objetivos de aprendizaje
 
 ### Javascript
-- [ ] Uso de callbacks
-- [ ] Consumo de Promesas
+- [x] Uso de callbacks
+- [x] Consumo de Promesas
 - [ ] Creación de Promesas
 - [x] Módulos de JS
 - [ ] Recursión
@@ -57,10 +63,10 @@ Actualmente, el programa no contempla los siguientes _edge cases_: recursión (d
 - [ ] CLI
 
 ### Testing
-- [ ] Testeo de funciones
+- [x] Testeo de funciones
 - [ ] Testeo asíncrono
 - [ ] Uso de librerías de Mock
-- [ ] Mocks manuales
+- [x] Mocks manuales
 - [ ] Testeo para múltiples OS
 
 ### Git y Github

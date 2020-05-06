@@ -1,7 +1,5 @@
 // CLI
-const path = require('path');
 const mdLinks = require('./src/mdLinks');
-
 
 // test arguments
 const userPath1 = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md';
