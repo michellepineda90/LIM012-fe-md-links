@@ -6,8 +6,7 @@
   "scripts": {
     "eslint": "eslint --ext .js src/ tests/",
     "pretest": "npm run eslint",
-    "test": "jest --verbose --coverage",
-    "start": ""
+    "test": "jest --verbose --coverage"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,8 @@
     "semver": "^7.3.2"
   },
   "dependencies": {
-    "node-fetch": "^2.6.0"
+    "gitmoji-cli": "^3.2.4",
+    "node-fetch": "^2.6.0",
+    "slash": "^3.0.0"
   }
 }

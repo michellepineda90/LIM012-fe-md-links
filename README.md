@@ -12,57 +12,67 @@ El objetivo práctico de este proyecto es que crear mi propia _library_ en JavaS
 
 ### Arquitectura del proyecto 
 
+```
 .
 ├── README.md
 ├── package.json
 ├── index.js
 └── src
   └── mdLinks.js
+  └── utils.js
 └── tests
-  └── mdLinks.spec.js
+  └── utils.spec.js
+  └── mock-data.js
+  └── md-files
+```
 
 ### Planificación del proyecto
 
 Kanban board en GitHub: 
 
-![product-backlog-board](product-backlog.jpg)
+![product-backlog-board](./readme-img/product-backlog.jpg)
 
 ### DFD de algoritmo
 
-![DFD-for-algorithm](md-links.jpg)
+![DFD-for-algorithm](./readme-img/md-links.jpg)
 
 ### Documentación técnica
+
+Actualmente, el programa no contempla los siguientes _edge cases_: 
+Recursión (directory con otros directories);
+Timeout errors; 
+Una gran cantidad de links que pudiera provocar error en el fetch.
 
 ### Guía de usuario para instalación y uso
 
 ## Objetivos de aprendizaje
 
 ### Javascript
-- [ ] Uso de callbacks
-- [ ] Consumo de Promesas
-- [ ] Creacion de Promesas
-- [x] Modulos de JS
+- [x] Uso de callbacks
+- [x] Consumo de Promesas
+- [x] Creación de Promesas
+- [x] Módulos de JS
 - [ ] Recursión
 
 ### Node
-- [ ] Sistema de archivos
+- [x] Sistema de archivos
 - [x] package.json
-- [ ] crear modules
+- [x] Crear modules
 - [x] Instalar y usar modules
 - [x] npm scripts
-- [ ] CLI (Command Line Interface - Interfaz de Línea de Comando)
+- [ ] CLI
 
 ### Testing
-- [ ] Testeo de tus funciones
-- [ ] Testeo asíncrono
-- [ ] Uso de librerias de Mock
-- [ ] Mocks manuales
-- [ ] Testeo para multiples Sistemas Operativos
+- [x] Testeo de funciones
+- [x] Testeo asíncrono
+- [ ] Uso de librerías de Mock
+- [x] Mocks manuales
+- [ ] Testeo para múltiples OS
 
 ### Git y Github
 - [x] Organización en Github
 
 ### Buenas prácticas de desarrollo
-- [ ] Modularización
-- [ ] Nomenclatura / Semántica
+- [x] Modularización
+- [x] Nomenclatura / Semántica
 - [x] Linting
