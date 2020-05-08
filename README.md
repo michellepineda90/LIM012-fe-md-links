@@ -38,12 +38,46 @@ Kanban board en GitHub:
 
 ### Documentación técnica
 
-Actualmente, el programa no contempla los siguientes _edge cases_: 
+Actualmente, el programa no contempla los siguientes casos: 
+
 Recursión (directory con otros directories);
+
 Timeout errors; 
+
 Una gran cantidad de links que pudiera provocar error en el fetch.
 
 ### Guía de usuario para instalación y uso
+
+Este módulo md-links contiene tanto un archivo ejecutable desde la terminal, así como una API
+que puede ser utilizada programáticamente con ```require```. 
+
+API usage
+
+Para hacer uso del módulo, es necesario invocar la función mdLinks(), la cual recibe dos parámetros:
+```path``` que puede ser una ruta absoluta o relativa al archivo markdown que se busca analizar, y un 
+segundo parámetro ```validate``` que es un un booleano dentro de un objeto. La API retorna una promesa 
+que resuelve a un array. La promesa luego sería _thenable_ para hacer el uso que se desee de los valores 
+del resolve.
+
+Sus ejemplos de uso serían los siguientes:
+
+```
+const mdLinks = require("md-links");
+
+mdLinks("./some/example.md") // por default el valor de validate es false
+  .then(links => {
+    // => [{ href, text, file }]
+  })
+  .catch(console.error);
+
+mdLinks("./some/example.md", { validate: true })
+  .then(links => {
+    // => [{ href, text, file, status, ok }]
+  })
+  .catch(console.error);
+```
+
+CLI usage
 
 ## Objetivos de aprendizaje
 
