@@ -8,15 +8,15 @@ const formatCliOutput = (arrayOfLinkObjects) => {
   let output = '';
   arrayOfLinkObjects.forEach((link) => {
     const keys = Object.keys(link);
-    output = `${link['file']} ${link['href']} ${link['text']}`;
-    if (keys.length == 5) {
-      if (link['statusText'] == 'ok') {
-        output += `${chalk.green(link['status'])} ${chalk.green(link['statusText'])}`;
+    output = `${link.file} ${link.href} ${link.text}`;
+    if (keys.length === 5) {
+      if (link.statusText === 'ok') {
+        output += `${chalk.green(link.status)} ${chalk.green(link.statusText)}`;
       }
-      output += `${chalk.red(link['status'])} ${chalk.red(link['statusText'])}`;
+      output += `${chalk.red(link.status)} ${chalk.red(link.statusText)}`;
     }
     return output;
-  })
+  });
 };
 
 const getStatistics = (arrayOfLinkObjects) => {
@@ -25,22 +25,22 @@ const getStatistics = (arrayOfLinkObjects) => {
 const getValidityStatistics = (arrayOfLinkObjects) => {
 };
 
-const cli = (arguments) => {
-  if (arguments.length == 3) {
-    return mdLinks(arguments[2])
+const cli = (args) => {
+  if (args.length === 3) {
+    return mdLinks(args[2])
       .then((arr) => formatCliOutput(arr));
   }
-  else if (arguments.length == 4 && arguments[3] === '--validate') {
-    return mdLinks(arguments[2], { validate: true })
+  if (args.length === 4 && args[3] === '--validate') {
+    return mdLinks(args[2], { validate: true })
       .then((arr) => formatCliOutput(arr));
   }
-  else if (arguments.length == 4 && arguments[3] === '--stats') {
-    return mdLinks(arguments[2], { validate: true })
+  if (args.length === 4 && args[3] === '--stats') {
+    return mdLinks(args[2], { validate: true })
       .then((arr) => getStatistics(arr));
   }
-  else if (arguments.length == 5 && arguments[3] === '--stats' && arguments[4] === '--validate') {
-    return mdLinks(arguments[2], { validate: true })
-    .then((arr) => getValidityStatistics(arr));
+  if (args.length === 5 && args[3] === '--stats' && args[4] === '--validate') {
+    return mdLinks(args[2], { validate: true })
+      .then((arr) => getValidityStatistics(arr));
   }
 };
 
