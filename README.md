@@ -62,9 +62,9 @@ del resolve.
 Sus ejemplos de uso serían los siguientes:
 
 ```
-const mdLinks = require("md-links");
+const mdLinks = require("md-links"); // por default el valor de validate es false
 
-mdLinks("./some/example.md") // por default el valor de validate es false
+mdLinks("./some/example.md") 
   .then(links => {
     // => [{ href, text, file }]
   })

@@ -24,16 +24,17 @@ const validatePath = (absolutePath) => {
 };
 
 const getMdFilesFromDirectory = (absolutePath) => {
-  let individualFilePath = '';
-  const arrayOfMdFiles = [];
+  let arrayOfMdFiles = [];
   fs.readdirSync(absolutePath).forEach((element) => {
-    individualFilePath = `${absolutePath}/${element}`;
-    if (fs.statSync(individualFilePath).isFile) {
+    const individualFilePath = `${absolutePath}/${element}`;
+    const isFile = fs.statSync(individualFilePath).isFile();
+    if (isFile) {
       if (path.extname(individualFilePath) === '.md') {
         arrayOfMdFiles.push(individualFilePath);
       }
     } else {
-      return getMdFilesFromDirectory(individualFilePath);
+      const otherArrays = getMdFilesFromDirectory(individualFilePath);
+      arrayOfMdFiles = arrayOfMdFiles.concat(otherArrays);
     }
   });
   return arrayOfMdFiles;
@@ -49,11 +50,13 @@ const retrieveLinks = (absolutePath) => {
   return arrayOfLinks;
 };
 
-const getArrayOfLinkObjects = (absolutePath) => {
+const flatten = (array) => array.reduce((acc, cur) => acc.concat(cur));
+
+const getArrayOfLinks = (absolutePath) => {
   let links = [];
-  if (fs.statSync(absolutePath).isDirectory) {
+  if (fs.statSync(absolutePath).isDirectory()) {
     const arrayOfMdFiles = getMdFilesFromDirectory(absolutePath);
-    links = arrayOfMdFiles.forEach((element) => retrieveLinks(element));
+    links = flatten(arrayOfMdFiles.map((md) => retrieveLinks(md)));
   } else {
     links = retrieveLinks(absolutePath);
   }
@@ -97,7 +100,7 @@ module.exports = {
   validatePath,
   getMdFilesFromDirectory,
   retrieveLinks,
-  getArrayOfLinkObjects,
+  getArrayOfLinks,
   formatLinks,
   validateLinks,
 };

@@ -3,7 +3,6 @@
 const chalk = require('chalk');
 const mdLinks = require('./src/mdLinks');
 
-const userArguments = process.argv;
 
 const valAbsPath = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files';
 
@@ -13,13 +12,13 @@ const invRelPath = './tests/equis.md';
 
 const emptyFile = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/empty.md';
 
-/*
+
 const formatCliOutput = (arrayOfLinkObjects) => {
   let output = '';
   arrayOfLinkObjects.forEach((link) => {
     const keys = Object.keys(link);
     output = `${link.file} ${link.href} ${link.text}`;
-    if (keys.length === 5) {
+    if (link.status && link.statusText) {
       if (link.statusText === 'ok') {
         output += `${chalk.green(link.status)} ${chalk.green(link.statusText)}`;
       }
@@ -41,6 +40,8 @@ const getValidityStatistics = (arrayOfLinkObjects) => {
   return `${totalAndUniqueLinks}\n ${chalk.red('Broken:')} ${brokenLinks.length}`;
 };
 
+const userArguments = process.argv;
+
 const cli = (args) => {
   if (args.length === 3) {
     return mdLinks(args[2])
@@ -60,11 +61,11 @@ const cli = (args) => {
   }
 };
 
-cli(userArguments)
+cli(valAbsPath)
   .then((arr) => console.log(arr))
   .catch((err) => console.error(err.message));
-*/
 
-mdLinks(valAbsPath)
-  .then((arr) => console.log(arr))
-  .catch((err) => console.error(err.message));
+
+// mdLinks(valRelPath)
+//   .then((arr) => console.log(arr))
+//   .catch((err) => console.error(err.message));
