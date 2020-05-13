@@ -4,7 +4,7 @@ const mdLinks = (pathEnteredByUser, options) => new Promise((resolve) => {
   const absolutePath = utilityFunctions.resolvePath(pathEnteredByUser);
   if (utilityFunctions.validatePath(absolutePath)) {
     const links = utilityFunctions.getArrayOfLinks(absolutePath);
-    const formattedLinks = utilityFunctions.formatLinks(links);
+    const formattedLinks = utilityFunctions.formatLinks(links, pathEnteredByUser);
     if (!options || options.validate === false) {
       resolve(formattedLinks);
     }

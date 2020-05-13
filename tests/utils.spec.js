@@ -14,7 +14,7 @@ describe('validatePath returns booleans according to validity/existence of path'
   test('Returns true when path is valid and/or exists', () => {
     expect(utilityFunctions.validatePath(mock.valAbsPath)).toEqual(true);
   });
-  test('should throw Error message when path is invalid or does not exist', () => {
+  test('should throw error message when path is invalid or does not exist', () => {
     expect.assertions(1);
     try {
       utilityFunctions.validatePath(mock.invRelPath);
@@ -58,11 +58,11 @@ describe('getMdFiles from directory returns an array of all .md files inside a d
 });
 
 describe('formatLinks formats link info into object with three properties', () => {
-  test('Returns an array with an empty object if empty object passed', () => {
-    expect(utilityFunctions.formatLinks(mock.emptyFile, [])).toEqual([]);
+  test('Returns an empty array if empty array passed', () => {
+    expect(utilityFunctions.formatLinks([], mock.emptyFile)).toEqual([]);
   });
   test('Returns an array of objects with href, text, and file properties', () => {
-    expect(utilityFunctions.formatLinks(mock.valAbsPath, mock.rawLinks)).toEqual(mock.formatdLinks);
+    expect(utilityFunctions.formatLinks(mock.rawLinks, mock.valAbsPath)).toEqual(mock.formatdLinks);
   });
 });
 
@@ -73,8 +73,5 @@ describe('validateLinks makes http requests to each link to check status if user
       done();
     });
   });
-  test('Returns an error when the fetch fails with an error', () => {
-    expect.assertions(1);
-    return utilityFunctions.validateLinks().catch((err) => expect(err).toMatch('error'));
-  });
+  test('Returns error when fetch fails', () => expect(utilityFunctions.validateLinks()).rejects.toMatch('error'));
 });
