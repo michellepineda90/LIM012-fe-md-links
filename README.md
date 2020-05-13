@@ -1,7 +1,7 @@
 # Markdown Links
 
 Dentro de una comunidad de código abierto, nos han propuesto crear una
-herramienta usando [Node.js] que lea y analice archivos en formato `Markdown`
+herramienta usando `Node.js` que lea y analice archivos en formato `Markdown`
 para verificar los links que contengan y reportar algunas estadísticas.
 
 ## Objetivo
@@ -47,13 +47,13 @@ Una gran cantidad de links que pudiera provocar error en el fetch.
 ### Guía de usuario para instalación y uso
 
 Este módulo md-links contiene tanto un archivo ejecutable desde la terminal, así como una API
-que puede ser utilizada programáticamente con ```require```. 
+que puede ser utilizada programáticamente con `require`. 
 
 ## API usage
 
 Para hacer uso del módulo, es necesario invocar la función mdLinks(), la cual recibe dos parámetros:
-```path``` que puede ser una ruta absoluta o relativa al archivo markdown o directorio que se busca analizar,
-y un segundo parámetro opcional ```validate``` que es un un booleano dentro de un objeto. 
+`path` que puede ser una ruta absoluta o relativa al archivo markdown o directorio que se busca analizar,
+y un segundo parámetro opcional `validate` que es un un booleano dentro de un objeto. 
 La API retorna una promesa que resuelve a un array. La promesa luego sería _thenable_ para hacer el uso que se desee de los valores del resolve.
 
 Sus ejemplos de uso serían los siguientes:
@@ -72,7 +72,7 @@ mdLinks("./some/example.md", { validate: true })
 
 ## CLI usage
 
-Para hacer uso del CLI es necesario instalarlo via ```npm install```.
+Para hacer uso del CLI es necesario instalarlo via `npm install`.
 
 Existen diferentes opciones de su uso, las cuales se pueden encontrar bajo el flag de help, que 
 puede ser accedido de las tres siguientes maneras:
@@ -92,12 +92,12 @@ y no ingresa ningún parámetro adicional, únicamente mostrará los links, sin 
 
 ![cli-user-default](./readme-img/mdlinks.png)
 
-Si el usuario ingresa, además, el flag ```--validate``` obtendrá información sobre el status
+Si el usuario ingresa, además, el flag `--validate` obtendrá información sobre el status
 http de cada link:
 
 ![cli-user-validate](./readme-img/mdlinks.png)
 
-Si el usuario ingresa el flag ```---stats``` obtendrá información sobre el conjunto de links:
+Si el usuario ingresa el flag `---stats` obtendrá información sobre el conjunto de links:
 
 ![cli-user-stats](./readme-img/mdlinks-stats.png)
 
