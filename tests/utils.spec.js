@@ -33,6 +33,21 @@ describe('retrieveLinks retrieves all/any links from an individual .md file', ()
   });
 });
 
+describe('getArrayOfLinks runs getMdFiles if path leads to directory and retrieveLinks for md files', () => {
+  test('Returns an empty array if there are no links in .md file', () => {
+    expect(utilityFunctions.getArrayOfLinks(mock.emptyFile)).toEqual([]);
+  });
+  test('Returns an empty array if there are no links in directory', () => {
+    expect(utilityFunctions.getArrayOfLinks(mock.emptyDir)).toEqual([]);
+  });
+  test('Returns an array of links from .md file', () => {
+    expect(utilityFunctions.getArrayOfLinks(mock.valAbsPath)).toEqual(mock.rawLinks);
+  });
+  test('Returns an array of links from directory', () => {
+    expect(utilityFunctions.getArrayOfLinks(mock.valDir)).toEqual(mock.rawLinks);
+  });
+});
+
 describe('getMdFiles from directory returns an array of all .md files inside a directory/subdirectories', () => {
   test('Returns an empty array if there are no links', () => {
     expect(utilityFunctions.getMdFilesFromDirectory(mock.emptyDir)).toEqual([]);
@@ -58,10 +73,8 @@ describe('validateLinks makes http requests to each link to check status if user
       done();
     });
   });
+  test('Returns an error when the fetch fails with an error', () => {
+    expect.assertions(1);
+    return utilityFunctions.validateLinks().catch((err) => expect(err).toMatch('error'));
+  });
 });
-
-/*
-Tests de integración para el CLI
-Llamar a la librería con dos parámetros y asegurarme que los estoy recibiendo
-Además: testeo para múltiples OS, mock para fetch()
-*/
