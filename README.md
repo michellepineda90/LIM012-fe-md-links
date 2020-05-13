@@ -42,7 +42,11 @@ Actualmente, el programa no contempla los siguientes casos:
 
 Timeout errors; 
 
-Una gran cantidad de links que pudiera provocar error en el fetch.
+Una gran cantidad de links que pudiera provocar error en el fetch;
+
+Tests de integración para el CLI: llamar a la librería con dos parámetros y testear que se están recibiendo;
+
+Testeo para múltiples OS.
 
 ### Guía de usuario para instalación y uso
 
