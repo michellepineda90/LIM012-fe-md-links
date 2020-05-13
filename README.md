@@ -16,7 +16,7 @@ El objetivo práctico de este proyecto es que crear mi propia _library_ en JavaS
 .
 ├── README.md
 ├── package.json
-├── index.js
+├── cli.js
 └── src
   └── mdLinks.js
   └── utils.js
@@ -49,7 +49,7 @@ Una gran cantidad de links que pudiera provocar error en el fetch.
 Este módulo md-links contiene tanto un archivo ejecutable desde la terminal, así como una API
 que puede ser utilizada programáticamente con ```require```. 
 
-API usage
+## API usage
 
 Para hacer uso del módulo, es necesario invocar la función mdLinks(), la cual recibe dos parámetros:
 ```path``` que puede ser una ruta absoluta o relativa al archivo markdown o directorio que se busca analizar,
@@ -71,7 +71,7 @@ mdLinks("./some/example.md", { validate: true })
   .catch((err) => console.error(err.message));
 ```
 
-CLI usage
+## CLI usage
 
 Para hacer uso del CLI es necesario instalarlo via ```npm install```.
 
@@ -105,7 +105,7 @@ Si el usuario ingresa el flag ```---stats``` obtendrá información sobre el con
 Finalmente, se pueden combinar ambas opciones para obtener las estadísticas completas sobre el conjunto
 de links:
 
-![cli-user-stats-validate](./readme-img/mdlinks-stats-validate.png)
+![cli-user-stats-validate](./readme-img/md-links-stats-validate.png)
 
 ## Objetivos de aprendizaje
 
