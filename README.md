@@ -72,7 +72,7 @@ mdLinks("./some/example.md", { validate: true })
 
 ## CLI usage
 
-Para hacer uso del CLI es necesario instalarlo via `npm install`.
+Para hacer uso del CLI es necesario instalarlo via `npm install --global weirdkidwithwindows/LIM012-fe-md-links`.
 
 Existen diferentes opciones de su uso, las cuales se pueden encontrar bajo el flag de help, que 
 puede ser accedido de las tres siguientes maneras:
