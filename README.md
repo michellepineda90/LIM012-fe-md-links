@@ -73,7 +73,39 @@ mdLinks("./some/example.md", { validate: true })
 
 CLI usage
 
+Para hacer uso del CLI es necesario instalarlo via ```npm install```.
 
+Existen diferentes opciones de su uso, las cuales se pueden encontrar bajo el flag de help, que 
+puede ser accedido de las tres siguientes maneras:
+
+``` 
+md-links
+md-links --help
+md-links -h
+```
+
+Las anteriores opciones loggean la siguiente guía:
+
+![cli-user-help](./readme-img/mdlinks-help.png)
+
+Si el usuario ingresa un path hacia archivo o directorio de archivos markdown que desea analizar,
+y no ingresa ningún parámetro adicional, únicamente mostrará los links, sin ningún dato adicional:
+
+![cli-user-default](./readme-img/mdlinks.png)
+
+Si el usuario ingresa, además, el flag ```--validate``` obtendrá información sobre el status
+http de cada link:
+
+![cli-user-validate](./readme-img/mdlinks.png)
+
+Si el usuario ingresa el flag ```---stats``` obtendrá información sobre el conjunto de links:
+
+![cli-user-stats](./readme-img/mdlinks-stats.png)
+
+Finalmente, se pueden combinar ambas opciones para obtener las estadísticas completas sobre el conjunto
+de links:
+
+![cli-user-stats-validate](./readme-img/mdlinks-stats-validate.png)
 
 ## Objetivos de aprendizaje
 
