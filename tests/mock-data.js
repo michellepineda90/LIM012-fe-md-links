@@ -2,14 +2,20 @@ const valAbsPath = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-
 
 const valRelPath = './tests/md-files/all-valid-links.md';
 
+const valDir = './tests/md-files';
+
+const emptyDir = './tests/md-files/fake-empty-folder';
+
 const invRelPath = './tests/equis.md';
 
 const emptyFile = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/empty.md';
 
-const mdFilesFromDirectory = [
-  'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
-  'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/empty.md',
-  'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/some-invalid-links.md',
+const mdFiles = [
+  './tests/md-files/all-valid-links.md',
+  './tests/md-files/empty.md',
+  './tests/md-files/fake-folder/empty2.md',
+  './tests/md-files/fake-folder/valid2.md',
+  './tests/md-files/some-invalid-links.md',
 ];
 
 const rawLinks = [
@@ -127,9 +133,11 @@ const validatdLinks = [
 module.exports = {
   valAbsPath,
   valRelPath,
+  valDir,
+  emptyDir,
   invRelPath,
   emptyFile,
-  mdFilesFromDirectory,
+  mdFiles,
   rawLinks,
   formatdLinks,
   validatdLinks,

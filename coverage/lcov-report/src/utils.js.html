@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.77% </span>
+                <span class="strong">78.26% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>44/69</span>
+                <span class='fraction'>54/69</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">78.57% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/14</span>
+                <span class='fraction'>11/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">55.56% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>10/18</span>
+                <span class='fraction'>12/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">65.08% </span>
+                <span class="strong">80.95% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>41/63</span>
+                <span class='fraction'>51/63</span>
             </div>
         
             
@@ -189,20 +189,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -294,21 +294,21 @@ const validatePath = (absolutePath) =&gt; {
   return pathIsValid;
 };
 &nbsp;
-const getMdFilesFromDirectory = <span class="fstat-no" title="function not covered" >(a</span>bsolutePath) =&gt; {
-  let arrayOfMdFiles = <span class="cstat-no" title="statement not covered" >[];</span>
-<span class="cstat-no" title="statement not covered" >  fs.readdirSync(absolutePath).forEach(<span class="fstat-no" title="function not covered" >(e</span>lement) =&gt; {</span>
-    const individualFilePath = <span class="cstat-no" title="statement not covered" >`${absolutePath}/${element}`;</span>
-    const isFile = <span class="cstat-no" title="statement not covered" >fs.statSync(individualFilePath).isFile();</span>
-<span class="cstat-no" title="statement not covered" >    if (isFile) {</span>
-<span class="cstat-no" title="statement not covered" >      if (path.extname(individualFilePath) === '.md') {</span>
-<span class="cstat-no" title="statement not covered" >        arrayOfMdFiles.push(individualFilePath);</span>
+const getMdFilesFromDirectory = (absolutePath) =&gt; {
+  let arrayOfMdFiles = [];
+  fs.readdirSync(absolutePath).forEach((element) =&gt; {
+    const individualFilePath = `${absolutePath}/${element}`;
+    const isFile = fs.statSync(individualFilePath).isFile();
+    if (isFile) {
+      if (path.extname(individualFilePath) === '.md') {
+        arrayOfMdFiles.push(individualFilePath);
       }
     } else {
-      const otherArrays = <span class="cstat-no" title="statement not covered" >getMdFilesFromDirectory(individualFilePath);</span>
-<span class="cstat-no" title="statement not covered" >      arrayOfMdFiles = arrayOfMdFiles.concat(otherArrays);</span>
+      const otherArrays = getMdFilesFromDirectory(individualFilePath);
+      arrayOfMdFiles = arrayOfMdFiles.concat(otherArrays);
     }
   });
-<span class="cstat-no" title="statement not covered" >  return arrayOfMdFiles;</span>
+  return arrayOfMdFiles;
 };
 &nbsp;
 const retrieveLinks = (absolutePath) =&gt; {
@@ -382,7 +382,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue May 12 2020 20:43:15 GMT-0500 (Colombia Standard Time)
+                at Tue May 12 2020 21:34:18 GMT-0500 (Colombia Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

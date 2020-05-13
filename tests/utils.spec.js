@@ -33,12 +33,12 @@ describe('retrieveLinks retrieves all/any links from an individual .md file', ()
   });
 });
 
-describe.skip('getMdFiles from directory returns an array of all .md files inside a directory/subdirectories', () => {
+describe('getMdFiles from directory returns an array of all .md files inside a directory/subdirectories', () => {
   test('Returns an empty array if there are no links', () => {
-    expect(utilityFunctions.retrieveLinks(mock.emptyFile)).toEqual([]);
+    expect(utilityFunctions.getMdFilesFromDirectory(mock.emptyDir)).toEqual([]);
   });
-  test('Returns an array of links from .md file', () => {
-    expect(utilityFunctions.retrieveLinks(mock.valAbsPath)).toEqual(mock.rawLinks);
+  test('Returns an array of .md files', () => {
+    expect(utilityFunctions.getMdFilesFromDirectory(mock.valDir)).toEqual(mock.mdFiles);
   });
 });
 
