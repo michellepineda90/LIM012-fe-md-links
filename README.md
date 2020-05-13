@@ -53,9 +53,8 @@ que puede ser utilizada programáticamente con ```require```.
 
 Para hacer uso del módulo, es necesario invocar la función mdLinks(), la cual recibe dos parámetros:
 ```path``` que puede ser una ruta absoluta o relativa al archivo markdown o directorio que se busca analizar,
-y un segundo parámetro ```validate``` que es un un booleano dentro de un objeto. La API retorna una promesa 
-que resuelve a un array. La promesa luego sería _thenable_ para hacer el uso que se desee de los valores 
-del resolve.
+y un segundo parámetro opcional ```validate``` que es un un booleano dentro de un objeto. 
+La API retorna una promesa que resuelve a un array. La promesa luego sería _thenable_ para hacer el uso que se desee de los valores del resolve.
 
 Sus ejemplos de uso serían los siguientes:
 
