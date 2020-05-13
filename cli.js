@@ -71,10 +71,3 @@ const cli = (args) => {
 cli(userArguments)
   .then((arr) => console.log(arr))
   .catch((err) => console.error(err.message));
-
-const valAbsPath = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md';
-const valRelPath = './tests/md-files/all-valid-links.md';
-const valDir = './tests/md-files';
-const emptyDir = './tests/md-files/fake-empty-folder';
-const invRelPath = './tests/equis.md';
-const emptyFile = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/empty.md';

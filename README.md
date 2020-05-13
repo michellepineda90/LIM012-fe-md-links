@@ -94,12 +94,12 @@ Las anteriores opciones loggean la siguiente guía:
 Si el usuario ingresa un path hacia archivo o directorio de archivos markdown que desea analizar,
 y no ingresa ningún parámetro adicional, únicamente mostrará los links, sin ningún dato adicional:
 
-![cli-user-default](./readme-img/mdlinks.png)
+![cli-user-default](./readme-img/mdlinks-default.png)
 
 Si el usuario ingresa, además, el flag `--validate` obtendrá información sobre el status
 http de cada link:
 
-![cli-user-validate](./readme-img/mdlinks.png)
+![cli-user-validate](./readme-img/mdlinks-validate.png)
 
 Si el usuario ingresa el flag `---stats` obtendrá información sobre el conjunto de links:
 
