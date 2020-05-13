@@ -63,7 +63,7 @@ const getArrayOfLinks = (absolutePath) => {
   return links;
 };
 
-const formatLinks = (arrayOfLinks) => {
+const formatLinks = (arrayOfLinks, pathEnteredByUser) => {
   const formattedLinks = [];
   if (arrayOfLinks.length) {
     arrayOfLinks.forEach((link) => {
@@ -72,7 +72,7 @@ const formatLinks = (arrayOfLinks) => {
       formattedLinks.push({
         href: url.substring(1, url.length - 1),
         text: text.substring(1, text.length - 1).slice(0, 49),
-        file: resolvePath(link),
+        file: pathEnteredByUser,
       });
     });
     return formattedLinks;

@@ -40,8 +40,6 @@ Kanban board en GitHub:
 
 Actualmente, el programa no contempla los siguientes casos: 
 
-Recursión (directory con otros directories);
-
 Timeout errors; 
 
 Una gran cantidad de links que pudiera provocar error en el fetch.
@@ -54,8 +52,8 @@ que puede ser utilizada programáticamente con ```require```.
 API usage
 
 Para hacer uso del módulo, es necesario invocar la función mdLinks(), la cual recibe dos parámetros:
-```path``` que puede ser una ruta absoluta o relativa al archivo markdown que se busca analizar, y un 
-segundo parámetro ```validate``` que es un un booleano dentro de un objeto. La API retorna una promesa 
+```path``` que puede ser una ruta absoluta o relativa al archivo markdown o directorio que se busca analizar,
+y un segundo parámetro ```validate``` que es un un booleano dentro de un objeto. La API retorna una promesa 
 que resuelve a un array. La promesa luego sería _thenable_ para hacer el uso que se desee de los valores 
 del resolve.
 
@@ -65,19 +63,17 @@ Sus ejemplos de uso serían los siguientes:
 const mdLinks = require("md-links"); // por default el valor de validate es false
 
 mdLinks("./some/example.md") 
-  .then(links => {
-    // => [{ href, text, file }]
-  })
-  .catch(console.error);
+  .then((arr) => console.log(arr)) // [{ href, text, file }]
+  .catch((err) => console.error(err.message));
 
 mdLinks("./some/example.md", { validate: true })
-  .then(links => {
-    // => [{ href, text, file, status, ok }]
-  })
-  .catch(console.error);
+  .then((arr) => console.log(arr)) // [{ href, text, file, status, ok }]
+  .catch((err) => console.error(err.message));
 ```
 
 CLI usage
+
+
 
 ## Objetivos de aprendizaje
 
@@ -86,7 +82,7 @@ CLI usage
 - [x] Consumo de Promesas
 - [x] Creación de Promesas
 - [x] Módulos de JS
-- [ ] Recursión
+- [x] Recursión
 
 ### Node
 - [x] Sistema de archivos
@@ -94,13 +90,13 @@ CLI usage
 - [x] Crear modules
 - [x] Instalar y usar modules
 - [x] npm scripts
-- [ ] CLI
+- [x] CLI
 
 ### Testing
 - [x] Testeo de funciones
 - [x] Testeo asíncrono
 - [ ] Uso de librerías de Mock
-- [x] Mocks manuales
+- [ ] Mocks manuales
 - [ ] Testeo para múltiples OS
 
 ### Git y Github
