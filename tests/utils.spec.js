@@ -1,7 +1,7 @@
 const utilityFunctions = require('../src/utils');
 const mock = require('./mock-data');
 
-describe('Resolves a path', () => {
+describe('resolvePath deals with normalizing the path entered by user', () => {
   test('Resolves a relative path into an absolute path', () => {
     expect(utilityFunctions.resolvePath(mock.valRelPath)).toEqual(mock.valAbsPath);
   });
@@ -10,7 +10,7 @@ describe('Resolves a path', () => {
   });
 });
 
-describe('Validates a path', () => {
+describe('validatePath returns booleans according to validity/existence of path', () => {
   test('Returns true when path is valid and/or exists', () => {
     expect(utilityFunctions.validatePath(mock.valAbsPath)).toEqual(true);
   });
@@ -24,7 +24,7 @@ describe('Validates a path', () => {
   });
 });
 
-describe('Retrieves all/any links from a .md file', () => {
+describe('retrieveLinks retrieves all/any links from an individual .md file', () => {
   test('Returns an empty array if there are no links', () => {
     expect(utilityFunctions.retrieveLinks(mock.emptyFile)).toEqual([]);
   });
@@ -33,7 +33,16 @@ describe('Retrieves all/any links from a .md file', () => {
   });
 });
 
-describe('Formats link into object with three properties', () => {
+describe.skip('getMdFiles from directory returns an array of all .md files inside a directory/subdirectories', () => {
+  test('Returns an empty array if there are no links', () => {
+    expect(utilityFunctions.retrieveLinks(mock.emptyFile)).toEqual([]);
+  });
+  test('Returns an array of links from .md file', () => {
+    expect(utilityFunctions.retrieveLinks(mock.valAbsPath)).toEqual(mock.rawLinks);
+  });
+});
+
+describe('formatLinks formats link info into object with three properties', () => {
   test('Returns an array with an empty object if empty object passed', () => {
     expect(utilityFunctions.formatLinks(mock.emptyFile, [])).toEqual([]);
   });
@@ -42,7 +51,7 @@ describe('Formats link into object with three properties', () => {
   });
 });
 
-describe('Validates links if user enters validate option', () => {
+describe('validateLinks makes http requests to each link to check status if user enters validate option', () => {
   it('Returns an array of objects with href, text, file, status, statusText', (done) => {
     utilityFunctions.validateLinks(mock.formatdLinks).then((element) => {
       expect(element).toEqual(mock.validatdLinks);

@@ -6,6 +6,12 @@ const invRelPath = './tests/equis.md';
 
 const emptyFile = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/empty.md';
 
+const mdFilesFromDirectory = [
+  'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+  'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/empty.md',
+  'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/some-invalid-links.md',
+];
+
 const rawLinks = [
   '[Node.js](https://nodejs.org/en/)',
   '[módulos (CommonJS)](https://nodejs.org/docs/latest-v0.10.x/api/modules.html)',
@@ -123,6 +129,7 @@ module.exports = {
   valRelPath,
   invRelPath,
   emptyFile,
+  mdFilesFromDirectory,
   rawLinks,
   formatdLinks,
   validatdLinks,

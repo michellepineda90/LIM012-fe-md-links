@@ -3,8 +3,8 @@ const utilityFunctions = require('./utils');
 const mdLinks = (pathEnteredByUser, options) => new Promise((resolve) => {
   const absolutePath = utilityFunctions.resolvePath(pathEnteredByUser);
   if (utilityFunctions.validatePath(absolutePath)) {
-    const links = utilityFunctions.retrieveLinks(absolutePath);
-    const formattedLinks = utilityFunctions.formatLinks(pathEnteredByUser, links);
+    const links = utilityFunctions.getArrayOfLinks(absolutePath);
+    const formattedLinks = utilityFunctions.formatLinks(links);
     if (!options || options.validate === false) {
       resolve(formattedLinks);
     }
