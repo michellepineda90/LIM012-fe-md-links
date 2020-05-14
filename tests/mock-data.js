@@ -1,5 +1,6 @@
 const slash = require('slash');
 
+// used to ensure that test runs on other computers
 const absPath = `${slash(process.cwd())}${'/tests/md-files/all-valid-links.md'}`;
 
 const relPath = './tests/md-files/all-valid-links.md';
