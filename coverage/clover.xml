@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1589414575423" clover="3.2.0">
-  <project timestamp="1589414575424" name="All files">
-    <metrics statements="74" coveredstatements="74" conditionals="17" coveredconditionals="17" methods="17" coveredmethods="17" elements="108" coveredelements="108" complexity="0" loc="74" ncloc="74" packages="2" files="2" classes="2"/>
+<coverage generated="1589466710424" clover="3.2.0">
+  <project timestamp="1589466710424" name="All files">
+    <metrics statements="75" coveredstatements="75" conditionals="17" coveredconditionals="17" methods="17" coveredmethods="17" elements="109" coveredelements="109" complexity="0" loc="75" ncloc="75" packages="2" files="2" classes="2"/>
     <package name="src">
       <metrics statements="63" coveredstatements="63" conditionals="17" coveredconditionals="17" methods="17" coveredmethods="17"/>
       <file name="utils.js" path="C:\Users\Instructor3\Desktop\personal\Laboratoria\LIM012-fe-md-links\src\utils.js">
@@ -72,9 +72,9 @@
       </file>
     </package>
     <package name="tests">
-      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="mock-data.js" path="C:\Users\Instructor3\Desktop\personal\Laboratoria\LIM012-fe-md-links\tests\mock-data.js">
-        <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
@@ -82,10 +82,11 @@
         <line num="9" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="74" count="1" type="stmt"/>
-        <line num="133" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="135" count="1" type="stmt"/>
       </file>
     </package>
   </project>

@@ -1,7 +1,8 @@
-// esta ruta sólo será válida para mi computadora
-const valAbsPath = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md';
+const slash = require('slash');
 
-const valRelPath = './tests/md-files/all-valid-links.md';
+const absPath = `${slash(process.cwd())}${'/tests/md-files/all-valid-links.md'}`;
+
+const relPath = './tests/md-files/all-valid-links.md';
 
 const valDir = './tests/md-files';
 
@@ -132,8 +133,8 @@ const validatedLinks = [
 ];
 
 module.exports = {
-  valAbsPath,
-  valRelPath,
+  absPath,
+  relPath,
   valDir,
   emptyDir,
   invRelPath,
