@@ -68,10 +68,12 @@ describe('formatLinks formats link info into object with three properties', () =
 
 describe('validateLinks makes http requests to each link to check status if user enters validate option', () => {
   it('Returns an array of objects with href, text, file, status, statusText', (done) => {
-    utilityFunctions.validateLinks(mock.formatdLinks).then((element) => {
+    utilityFunctions.validateLinks(mock.formatdLinks).then((element) => { // resolves
       expect(element).toEqual(mock.validatdLinks);
       done();
     });
   });
-  test('Returns error when fetch fails', () => expect(utilityFunctions.validateLinks()).rejects.toMatch('error'));
+  it('Returns error when fetch fails', () => {
+    expect(utilityFunctions.validateLinks()).rejects.toMatch('error');
+  });
 });

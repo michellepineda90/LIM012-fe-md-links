@@ -1,3 +1,4 @@
+// esta ruta sólo será válida para mi computadora
 const valAbsPath = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md';
 
 const valRelPath = './tests/md-files/all-valid-links.md';
@@ -8,7 +9,7 @@ const emptyDir = './tests/md-files/fake-empty-folder';
 
 const invRelPath = './tests/equis.md';
 
-const emptyFile = 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/empty.md';
+const emptyFile = './tests/md-files/empty.md';
 
 const mdFiles = [
   './tests/md-files/all-valid-links.md',
@@ -28,7 +29,7 @@ const rawLinks = [
   '[npm-scripts](https://docs.npmjs.com/misc/scripts)',
   '[semver](https://semver.org/a)'];
 
-const formatdLinks = [
+const formattedLinks = [
   {
     href: 'https://nodejs.org/en/',
     text: 'Node.js',
@@ -71,7 +72,7 @@ const formatdLinks = [
   },
 ];
 
-const validatdLinks = [
+const validatedLinks = [
   {
     file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
     href: 'https://nodejs.org/en/',
@@ -139,6 +140,6 @@ module.exports = {
   emptyFile,
   mdFiles,
   rawLinks,
-  formatdLinks,
-  validatdLinks,
+  formattedLinks,
+  validatedLinks,
 };

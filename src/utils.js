@@ -82,7 +82,7 @@ const formatLinks = (links, pathEnteredByUser) => {
   return formattedLinks;
 };
 
-const validateLinks = (formattedLinks) => new Promise((resolve, reject) => {
+const validateLinks = (formattedLinks = []) => new Promise((resolve, reject) => {
   const linksToValidate = formattedLinks.slice();
   const extractedUrls = linksToValidate.map((link) => (link.href));
   const httpResponses = extractedUrls.map((url) => fetch(url));
@@ -94,7 +94,7 @@ const validateLinks = (formattedLinks) => new Promise((resolve, reject) => {
       });
       resolve(linksToValidate);
     })
-    .catch((err) => reject(err));
+    .catch(reject);
 });
 
 module.exports = {

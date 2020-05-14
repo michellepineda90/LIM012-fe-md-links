@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1589389363276" clover="3.2.0">
-  <project timestamp="1589389363276" name="All files">
-    <metrics statements="75" coveredstatements="74" conditionals="16" coveredconditionals="16" methods="18" coveredmethods="17" elements="109" coveredelements="107" complexity="0" loc="75" ncloc="75" packages="2" files="2" classes="2"/>
+<coverage generated="1589414575423" clover="3.2.0">
+  <project timestamp="1589414575424" name="All files">
+    <metrics statements="74" coveredstatements="74" conditionals="17" coveredconditionals="17" methods="17" coveredmethods="17" elements="108" coveredelements="108" complexity="0" loc="74" ncloc="74" packages="2" files="2" classes="2"/>
     <package name="src">
-      <metrics statements="64" coveredstatements="63" conditionals="16" coveredconditionals="16" methods="18" coveredmethods="17"/>
+      <metrics statements="63" coveredstatements="63" conditionals="17" coveredconditionals="17" methods="17" coveredmethods="17"/>
       <file name="utils.js" path="C:\Users\Instructor3\Desktop\personal\Laboratoria\LIM012-fe-md-links\src\utils.js">
-        <metrics statements="64" coveredstatements="63" conditionals="16" coveredconditionals="16" methods="18" coveredmethods="17"/>
+        <metrics statements="63" coveredstatements="63" conditionals="17" coveredconditionals="17" methods="17" coveredmethods="17"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -59,16 +59,15 @@
         <line num="74" count="8" type="stmt"/>
         <line num="80" count="1" type="stmt"/>
         <line num="82" count="1" type="stmt"/>
-        <line num="85" count="2" type="stmt"/>
+        <line num="85" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="86" count="2" type="stmt"/>
         <line num="87" count="8" type="stmt"/>
         <line num="88" count="8" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
-        <line num="91" count="1" type="stmt"/>
+        <line num="89" count="2" type="stmt"/>
+        <line num="91" count="2" type="stmt"/>
         <line num="92" count="8" type="stmt"/>
         <line num="93" count="8" type="stmt"/>
-        <line num="95" count="1" type="stmt"/>
-        <line num="97" count="0" type="stmt"/>
+        <line num="95" count="2" type="stmt"/>
         <line num="100" count="1" type="stmt"/>
       </file>
     </package>
