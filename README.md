@@ -130,8 +130,8 @@ de links:
 ### Testing
 - [x] Testeo de funciones
 - [x] Testeo asíncrono
+- [x] Mocks manuales aka Monkeypatching
 - [ ] Uso de librerías de Mock
-- [ ] Mocks manuales
 - [ ] Testeo para múltiples OS
 
 ### Git y Github
