@@ -133,6 +133,31 @@ const validatedLinks = [
   },
 ];
 
+const mockValid = [
+  {
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    href: 'https://www.laboratoria.la/',
+    text: 'Laboratoria',
+  },
+];
+
+const outputMockValid = [
+  {
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    href: 'https://www.laboratoria.la/',
+    text: 'Laboratoria',
+    status: 200,
+    statusText: 'OK',
+  },
+];
+
+const invalidLink = [
+  {
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    href: 'https://xhaoyelta/',
+  },
+];
+
 module.exports = {
   absPath,
   relPath,
@@ -144,4 +169,7 @@ module.exports = {
   rawLinks,
   formattedLinks,
   validatedLinks,
+  mockValid,
+  outputMockValid,
+  invalidLink,
 };

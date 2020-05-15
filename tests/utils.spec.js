@@ -1,5 +1,6 @@
 const utilityFunctions = require('../src/utils');
 const mock = require('./mock-data');
+const fetchMock = require('../src/__mocks__/node-fetch');
 
 describe('resolvePath deals with normalizing the path entered by user', () => {
   test('Resolves a relative path into an absolute path', () => {
@@ -66,15 +67,14 @@ describe('formatLinks formats link info into object with three properties', () =
   });
 });
 
+fetchMock
+  .mock('https://www.laboratoria.la/', 200);
+
 describe('validateLinks makes http requests to each link to check status if user enters validate option', () => {
-  it('Returns an array of objects with href, text, file, status, statusText', (done) => {
-    utilityFunctions.validateLinks(mock.formattedLinks).then((element) => {
-      expect(element).toEqual(mock.validatedLinks);
+  it('Returns an array of objects with required properties and status 200 when link is valid', (done) => {
+    utilityFunctions.validateLinks(mock.mockValid).then((element) => {
+      expect(element).toEqual(mock.outputMockValid);
       done();
     });
-    // test('Returns an array of objects with href, text, file, status, statusText', () => expect(utilityFunctions.validateLinks(formattedLinks(mock.formattedLinks))).resolves.toBe(mock.validatedLinks));
-  });
-  it('Returns error when fetch fails', () => {
-    expect(utilityFunctions.validateLinks()).rejects.toMatch('error');
   });
 });

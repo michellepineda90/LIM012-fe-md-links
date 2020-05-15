@@ -131,8 +131,8 @@ de links:
 - [x] Testeo de funciones
 - [x] Testeo asíncrono
 - [x] Mocks manuales aka Monkeypatching
-- [ ] Uso de librerías de Mock
-- [ ] Testeo para múltiples OS
+- [x] Testeo para múltiples OS
+- [x] Uso de librerías Mock (fetch-mock)
 
 ### Git y Github
 - [x] Organización en Github
