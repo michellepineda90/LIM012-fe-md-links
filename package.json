@@ -4,7 +4,7 @@
   "description": "Markdown documents link search and validator",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint --ext .js src/ tests/",
+    "eslint": "eslint --ext .js ./src",
     "pretest": "npm run eslint",
     "test": "jest --verbose --coverage"
   },

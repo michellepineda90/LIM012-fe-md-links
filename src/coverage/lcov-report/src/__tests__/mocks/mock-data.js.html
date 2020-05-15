@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for tests/mock-data.js</title>
+    <title>Code coverage report for src/__tests__/mocks/mock-data.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">tests</a> mock-data.js</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/__tests__/mocks</a> mock-data.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -434,24 +434,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const slash = require('slash');
 &nbsp;
 // used to ensure that test runs on other computers
-const absPath = `${slash(process.cwd())}${'/tests/md-files/all-valid-links.md'}`;
+const absPath = `${slash(process.cwd())}${'/src/__tests__/mocks/markdown/all-valid-links.md'}`;
 &nbsp;
-const relPath = './tests/md-files/all-valid-links.md';
+const relPath = './src/__tests__/mocks/markdown/all-valid-links.md';
 &nbsp;
-const valDir = './tests/md-files';
+const valDir = './src/__tests__/mocks/markdown';
 &nbsp;
-const emptyDir = './tests/md-files/fake-empty-folder';
+const emptyDir = './src/__tests__/mocks/markdown/fake-empty-folder';
 &nbsp;
-const invRelPath = './tests/equis.md';
+const invRelPath = './src/__tests__/equis.md';
 &nbsp;
-const emptyFile = './tests/md-files/empty.md';
+const emptyFile = './src/__tests__/mocks/markdown/empty.md';
 &nbsp;
 const mdFiles = [
-  './tests/md-files/all-valid-links.md',
-  './tests/md-files/empty.md',
-  './tests/md-files/fake-folder/empty2.md',
-  './tests/md-files/fake-folder/valid2.md',
-  './tests/md-files/some-invalid-links.md',
+  './src/__tests__/mocks/markdown/all-valid-links.md',
+  './src/__tests__/mocks/markdown/empty.md',
+  './src/__tests__/mocks/markdown/fake-folder/empty2.md',
+  './src/__tests__/mocks/markdown/fake-folder/valid2.md',
+  './src/__tests__/mocks/markdown/some-invalid-links.md',
 ];
 &nbsp;
 const rawLinks = [
@@ -468,97 +468,97 @@ const formattedLinks = [
   {
     href: 'https://nodejs.org/en/',
     text: 'Node.js',
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
   },
   {
     href: 'https://nodejs.org/docs/latest-v0.10.x/api/modules.html',
     text: 'módulos (CommonJS)',
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
   },
   {
     href: 'https://nodejs.org/api/fs.html',
     text: 'file system',
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
   },
   {
     href: 'https://nodejs.org/api/path.html',
     text: 'path',
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
   },
   {
     href: 'https://nodejs.org/api/http.html#http_http_get_options_callback',
     text: 'http.get',
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
   },
   {
     href: 'https://daringfireball.net/projects/markdown/syntax',
     text: 'markdown',
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
   },
   {
     href: 'https://docs.npmjs.com/misc/scripts',
     text: 'npm-scripts',
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
   },
   {
     href: 'https://semver.org/a',
     text: 'semver',
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
   },
 ];
 &nbsp;
 const validatedLinks = [
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://nodejs.org/en/',
     status: 200,
     statusText: 'OK',
     text: 'Node.js',
   },
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://nodejs.org/docs/latest-v0.10.x/api/modules.html',
     status: 200,
     statusText: 'OK',
     text: 'módulos (CommonJS)',
   },
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://nodejs.org/api/fs.html',
     status: 200,
     statusText: 'OK',
     text: 'file system',
   },
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://nodejs.org/api/path.html',
     status: 200,
     statusText: 'OK',
     text: 'path',
   },
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://nodejs.org/api/http.html#http_http_get_options_callback',
     status: 200,
     statusText: 'OK',
     text: 'http.get',
   },
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://daringfireball.net/projects/markdown/syntax',
     status: 200,
     statusText: 'OK',
     text: 'markdown',
   },
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://docs.npmjs.com/misc/scripts',
     status: 200,
     statusText: 'OK',
     text: 'npm-scripts',
   },
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://semver.org/a',
     status: 404,
     statusText: 'Not Found',
@@ -568,7 +568,7 @@ const validatedLinks = [
 &nbsp;
 const mockValid = [
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://www.laboratoria.la/',
     text: 'Laboratoria',
   },
@@ -576,7 +576,7 @@ const mockValid = [
 &nbsp;
 const outputMockValid = [
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://www.laboratoria.la/',
     text: 'Laboratoria',
     status: 200,
@@ -586,7 +586,7 @@ const outputMockValid = [
 &nbsp;
 const mockNotFound = [
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://www.laboratoria.la/aerys',
     text: 'Not Found',
   },
@@ -594,7 +594,7 @@ const mockNotFound = [
 &nbsp;
 const outputNotFound = [
   {
-    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/tests/md-files/all-valid-links.md',
+    file: 'C:/Users/Instructor3/Desktop/personal/Laboratoria/LIM012-fe-md-links/src/__tests__/mocks/markdown/all-valid-links.md',
     href: 'https://www.laboratoria.la/aerys',
     text: 'Not Found',
     status: 404,
@@ -625,17 +625,17 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri May 15 2020 15:14:11 GMT-0500 (Colombia Standard Time)
+                at Fri May 15 2020 17:16:50 GMT-0500 (Colombia Standard Time)
             </div>
         </div>
-        <script src="../prettify.js"></script>
+        <script src="../../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../../sorter.js"></script>
+        <script src="../../../block-navigation.js"></script>
     </body>
 </html>
     
