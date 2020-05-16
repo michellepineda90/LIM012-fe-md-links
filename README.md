@@ -20,10 +20,12 @@ El objetivo práctico de este proyecto es que crear mi propia _library_ en JavaS
 └── src
   └── mdLinks.js
   └── utils.js
-└── tests
-  └── utils.spec.js
-  └── mock-data.js
-  └── md-files
+  └── __tests__
+    └── utils.spec.js
+  └── __mocks__
+    └── mock-data.js
+    └── node-fetch.js
+    └── markdown
 ```
 
 ### Planificación del proyecto
