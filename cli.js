@@ -3,10 +3,6 @@
 const chalk = require('chalk');
 const mdLinks = require('./src/mdLinks');
 
-const valRelPath = './tests/md-files/all-valid-links.md';
-
-const invRelPath = './tests/equis.md';
-
 const formatCliOutput = (arrayOfLinkObjects) => {
   let output = '';
   arrayOfLinkObjects.forEach((link) => {

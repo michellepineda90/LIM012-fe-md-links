@@ -56,17 +56,19 @@ const getArrayOfLinks = (absolutePath) => {
   let links = [];
   if (fs.statSync(absolutePath).isDirectory()) {
     const arrayOfMdFiles = getMdFilesFromDirectory(absolutePath);
-    links = flatten(arrayOfMdFiles.map((md) => retrieveLinks(md)));
+    if (arrayOfMdFiles.length) {
+      links = flatten(arrayOfMdFiles.map((md) => retrieveLinks(md)));
+    }
   } else {
     links = retrieveLinks(absolutePath);
   }
   return links;
 };
 
-const formatLinks = (arrayOfLinks, pathEnteredByUser) => {
+const formatLinks = (links, pathEnteredByUser) => {
   const formattedLinks = [];
-  if (arrayOfLinks.length) {
-    arrayOfLinks.forEach((link) => {
+  if (links.length) {
+    links.forEach((link) => {
       const text = link.match(textRegEx)[0];
       const url = link.match(hrefRegEx)[0];
       formattedLinks.push({
@@ -92,7 +94,7 @@ const validateLinks = (formattedLinks) => new Promise((resolve, reject) => {
       });
       resolve(linksToValidate);
     })
-    .catch((err) => reject(err));
+    .catch(reject);
 });
 
 module.exports = {

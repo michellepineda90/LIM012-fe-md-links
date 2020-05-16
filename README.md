@@ -1,7 +1,7 @@
 # Markdown Links
 
 Dentro de una comunidad de código abierto, nos han propuesto crear una
-herramienta usando [Node.js] que lea y analice archivos en formato `Markdown`
+herramienta usando `Node.js` que lea y analice archivos en formato `Markdown`
 para verificar los links que contengan y reportar algunas estadísticas.
 
 ## Objetivo
@@ -16,14 +16,16 @@ El objetivo práctico de este proyecto es que crear mi propia _library_ en JavaS
 .
 ├── README.md
 ├── package.json
-├── index.js
+├── cli.js
 └── src
   └── mdLinks.js
   └── utils.js
-└── tests
-  └── utils.spec.js
-  └── mock-data.js
-  └── md-files
+  └── __tests__
+    └── utils.spec.js
+  └── __mocks__
+    └── mock-data.js
+    └── node-fetch.js
+    └── markdown
 ```
 
 ### Planificación del proyecto
@@ -42,20 +44,23 @@ Actualmente, el programa no contempla los siguientes casos:
 
 Timeout errors; 
 
-Una gran cantidad de links que pudiera provocar error en el fetch.
+Una gran cantidad de links que pudiera provocar error en el fetch;
+
+Tests de integración para el CLI: llamar a la librería con dos parámetros y testear que se están recibiendo;
+
+Testeo para múltiples OS.
 
 ### Guía de usuario para instalación y uso
 
 Este módulo md-links contiene tanto un archivo ejecutable desde la terminal, así como una API
-que puede ser utilizada programáticamente con ```require```. 
+que puede ser utilizada programáticamente con `require`. 
 
-API usage
+## API usage
 
 Para hacer uso del módulo, es necesario invocar la función mdLinks(), la cual recibe dos parámetros:
-```path``` que puede ser una ruta absoluta o relativa al archivo markdown o directorio que se busca analizar,
-y un segundo parámetro ```validate``` que es un un booleano dentro de un objeto. La API retorna una promesa 
-que resuelve a un array. La promesa luego sería _thenable_ para hacer el uso que se desee de los valores 
-del resolve.
+`path` que puede ser una ruta absoluta o relativa al archivo markdown o directorio que se busca analizar,
+y un segundo parámetro opcional `validate` que es un un booleano dentro de un objeto. 
+La API retorna una promesa que resuelve a un array. La promesa luego sería _thenable_ para hacer el uso que se desee de los valores del resolve.
 
 Sus ejemplos de uso serían los siguientes:
 
@@ -71,9 +76,9 @@ mdLinks("./some/example.md", { validate: true })
   .catch((err) => console.error(err.message));
 ```
 
-CLI usage
+## CLI usage
 
-Para hacer uso del CLI es necesario instalarlo via ```npm install```.
+Para hacer uso del CLI es necesario instalarlo via `npm install --global weirdkidwithwindows/LIM012-fe-md-links`.
 
 Existen diferentes opciones de su uso, las cuales se pueden encontrar bajo el flag de help, que 
 puede ser accedido de las tres siguientes maneras:
@@ -91,21 +96,21 @@ Las anteriores opciones loggean la siguiente guía:
 Si el usuario ingresa un path hacia archivo o directorio de archivos markdown que desea analizar,
 y no ingresa ningún parámetro adicional, únicamente mostrará los links, sin ningún dato adicional:
 
-![cli-user-default](./readme-img/mdlinks.png)
+![cli-user-default](./readme-img/mdlinks-default.png)
 
-Si el usuario ingresa, además, el flag ```--validate``` obtendrá información sobre el status
+Si el usuario ingresa, además, el flag `--validate` obtendrá información sobre el status
 http de cada link:
 
-![cli-user-validate](./readme-img/mdlinks.png)
+![cli-user-validate](./readme-img/mdlinks-validate.png)
 
-Si el usuario ingresa el flag ```---stats``` obtendrá información sobre el conjunto de links:
+Si el usuario ingresa el flag `---stats` obtendrá información sobre el conjunto de links:
 
 ![cli-user-stats](./readme-img/mdlinks-stats.png)
 
 Finalmente, se pueden combinar ambas opciones para obtener las estadísticas completas sobre el conjunto
 de links:
 
-![cli-user-stats-validate](./readme-img/mdlinks-stats-validate.png)
+![cli-user-stats-validate](./readme-img/md-links-stats-validate.png)
 
 ## Objetivos de aprendizaje
 
@@ -127,9 +132,9 @@ de links:
 ### Testing
 - [x] Testeo de funciones
 - [x] Testeo asíncrono
-- [ ] Uso de librerías de Mock
-- [ ] Mocks manuales
-- [ ] Testeo para múltiples OS
+- [x] Mocks manuales aka Monkeypatching
+- [x] Testeo para múltiples OS
+- [x] Uso de librerías Mock (fetch-mock)
 
 ### Git y Github
 - [x] Organización en Github
