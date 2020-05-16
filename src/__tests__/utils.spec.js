@@ -1,5 +1,5 @@
 const utilityFunctions = require('../utils');
-const mock = require('./mocks/mock-data');
+const mock = require('../__mocks__/mock-data');
 const fetchMock = require('../__mocks__/node-fetch');
 
 describe('resolvePath deals with normalizing the path entered by user', () => {
@@ -68,8 +68,8 @@ describe('formatLinks formats link info into object with three properties', () =
 });
 
 fetchMock
-  .mock('https://www.laboratoria.la/', 200)
-  .mock('https://www.laboratoria.la/aerys', 404);
+  .mock('validurl', 200)
+  .mock('invalidurl', 404);
 
 describe('validateLinks makes http requests to each link to check status if user enters validate option', () => {
   it('Returns an array of objects with required properties and status 200 when link is valid', (done) => {
