@@ -143,3 +143,5 @@ de links:
 - [x] Modularización
 - [x] Nomenclatura / Semántica
 - [x] Linting
+
+[![BCH compliance](https://bettercodehub.com/edge/badge/weirdkidwithwindows/LIM012-fe-md-links?branch=master)](https://bettercodehub.com/)
