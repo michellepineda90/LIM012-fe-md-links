@@ -1,16 +1,10 @@
 const slash = require('slash');
 
-// used to ensure that test runs on other computers
 const absPath = `${slash(process.cwd())}${'/src/__mocks__/markdown/all-valid-links.md'}`;
-
 const relPath = './src/__mocks__/markdown/all-valid-links.md';
-
 const valDir = './src/__mocks__/markdown';
-
 const emptyDir = './src/__mocks__/markdown/fake-empty-folder';
-
 const invRelPath = './src/__tests__/equis.md';
-
 const emptyFile = './src/__mocks__/markdown/empty.md';
 
 const mdFiles = [
