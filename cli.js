@@ -32,7 +32,7 @@ const getValidityStatistics = (arrayOfLinkObjects) => {
 };
 
 const printHelp = `
-  To run this library, execute the following: md-links <path-to-file> [options] 
+  To run this library, execute the following: md-links <path-to-file> [options]
 
   In total, these are the options:
   Option 1: md-links <path-to-file>
@@ -45,29 +45,31 @@ const printHelp = `
 
 const userArguments = process.argv;
 
-const cli = (args) => {
-  if (args.length === 3 && (args[2] === '--help' || args[2] === '-h')) {
-    return new Promise((resolve) => { resolve(printHelp); });
-  }
-  if (args.length === 3) {
-    return mdLinks(args[2])
-      .then((arr) => (formatCliOutput(arr)));
-  }
-  if (args.length === 4 && args[3] === '--validate') {
-    return mdLinks(args[2], { validate: true })
-      .then((arr) => formatCliOutput(arr));
-  }
-  if (args.length === 4 && args[3] === '--stats') {
-    return mdLinks(args[2], { validate: true })
-      .then((arr) => getStatistics(arr));
-  }
-  if (args.length === 5 && args[3] === '--stats' && args[4] === '--validate') {
-    return mdLinks(args[2], { validate: true })
-      .then((arr) => getValidityStatistics(arr));
-  }
-  return Promise.resolve(printHelp);
-};
-
-cli(userArguments)
-  .then((arr) => console.log(arr))
-  .catch((err) => console.error(err.message));
+if (userArguments.length === 3 && (userArguments[2] === '--help' || userArguments[2] === '-h')) {
+  console.log(printHelp);
+}
+if (userArguments.length === 3) {
+  mdLinks(userArguments[2])
+    .then((arr) => (formatCliOutput(arr)))
+    .then((arr) => console.log(arr))
+    .catch((err) => console.error(err.message));
+}
+if (userArguments.length === 4 && userArguments[3] === '--validate') {
+  mdLinks(userArguments[2], { validate: true })
+    .then((arr) => formatCliOutput(arr))
+    .then((arr) => console.log(arr))
+    .catch((err) => console.error(err.message));
+}
+if (userArguments.length === 4 && userArguments[3] === '--stats') {
+  mdLinks(userArguments[2], { validate: true })
+    .then((arr) => getStatistics(arr))
+    .then((arr) => console.log(arr))
+    .catch((err) => console.error(err.message));
+}
+if (userArguments.length === 5 && userArguments[3] === '--stats' && userArguments[4] === '--validate') {
+  mdLinks(userArguments[2], { validate: true })
+    .then((arr) => getValidityStatistics(arr))
+    .then((arr) => console.log(arr))
+    .catch((err) => console.error(err.message));
+}
+console.log(printHelp);

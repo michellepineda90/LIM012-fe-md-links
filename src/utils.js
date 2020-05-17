@@ -82,20 +82,19 @@ const formatLinks = (links, pathEnteredByUser) => {
   return formattedLinks;
 };
 
-const validateLinks = (formattedLinks) => new Promise((resolve, reject) => {
+const validateLinks = (formattedLinks) => {
   const linksToValidate = formattedLinks.slice();
   const extractedUrls = linksToValidate.map((link) => (link.href));
   const httpResponses = extractedUrls.map((url) => fetch(url));
-  Promise.all(httpResponses)
+  return Promise.all(httpResponses)
     .then((responses) => {
       responses.forEach((response, index) => {
         linksToValidate[index].status = response.status;
         linksToValidate[index].statusText = response.statusText;
       });
-      resolve(linksToValidate);
-    })
-    .catch(reject);
-});
+      return linksToValidate;
+    });
+};
 
 module.exports = {
   resolvePath,
