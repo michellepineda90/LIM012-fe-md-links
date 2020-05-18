@@ -45,31 +45,33 @@ const printHelp = `
 
 const userArguments = process.argv;
 
+const print = (data) => console.table(data);
+
 if (userArguments.length === 3 && (userArguments[2] === '--help' || userArguments[2] === '-h')) {
   console.log(printHelp);
 }
 if (userArguments.length === 3) {
   mdLinks(userArguments[2])
-    .then((arr) => (formatCliOutput(arr)))
-    .then((arr) => console.log(arr))
+    .then(formatCliOutput)
+    .then(print)
     .catch((err) => console.error(err.message));
 }
 if (userArguments.length === 4 && userArguments[3] === '--validate') {
   mdLinks(userArguments[2], { validate: true })
-    .then((arr) => formatCliOutput(arr))
-    .then((arr) => console.log(arr))
+    .then(formatCliOutput)
+    .then(print)
     .catch((err) => console.error(err.message));
 }
 if (userArguments.length === 4 && userArguments[3] === '--stats') {
   mdLinks(userArguments[2], { validate: true })
-    .then((arr) => getStatistics(arr))
-    .then((arr) => console.log(arr))
+    .then(getStatistics)
+    .then(print)
     .catch((err) => console.error(err.message));
 }
 if (userArguments.length === 5 && userArguments[3] === '--stats' && userArguments[4] === '--validate') {
   mdLinks(userArguments[2], { validate: true })
-    .then((arr) => getValidityStatistics(arr))
-    .then((arr) => console.log(arr))
+    .then(getValidityStatistics)
+    .then(print)
     .catch((err) => console.error(err.message));
 }
 console.log(printHelp);

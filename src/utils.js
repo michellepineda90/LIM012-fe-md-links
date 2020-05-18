@@ -57,7 +57,7 @@ const getArrayOfLinks = (absolutePath) => {
   if (fs.statSync(absolutePath).isDirectory()) {
     const arrayOfMdFiles = getMdFilesFromDirectory(absolutePath);
     if (arrayOfMdFiles.length) {
-      links = flatten(arrayOfMdFiles.map((md) => retrieveLinks(md)));
+      links = flatten(arrayOfMdFiles.map(retrieveLinks));
     }
   } else {
     links = retrieveLinks(absolutePath);
@@ -85,8 +85,8 @@ const formatLinks = (links, pathEnteredByUser) => {
 const validateLinks = (formattedLinks) => {
   const linksToValidate = formattedLinks.slice();
   const extractedUrls = linksToValidate.map((link) => (link.href));
-  const httpResponses = extractedUrls.map((url) => fetch(url));
-  return Promise.all(httpResponses)
+  const urlsToFetch = extractedUrls.map((url) => fetch(url));
+  return Promise.all(urlsToFetch)
     .then((responses) => {
       responses.forEach((response, index) => {
         linksToValidate[index].status = response.status;
