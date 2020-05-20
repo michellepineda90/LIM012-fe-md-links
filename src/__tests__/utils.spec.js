@@ -1,6 +1,5 @@
 const utilityFunctions = require('../utils');
 const mock = require('../__mocks__/mock-data');
-const fetchMock = require('../__mocks__/node-fetch');
 
 describe('resolvePath deals with normalizing the path entered by user', () => {
   test('Resolves a relative path into an absolute path', () => {
@@ -66,10 +65,6 @@ describe('formatLinks formats link info into object with three properties', () =
     expect(utilityFunctions.formatLinks(mock.rawLinks, mock.absPath)).toEqual(mock.formattedLinks);
   });
 });
-
-fetchMock
-  .mock('validurl', 200)
-  .mock('invalidurl', 404);
 
 describe('validateLinks makes http requests to each link to check status if user enters validate option', () => {
   it('Returns an array of objects with required properties and status 200 when link is valid', (done) => {
